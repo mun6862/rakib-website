@@ -1,2617 +1,4460 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Rakib | E-commerce Expert</title>
-
-  <meta name="description"
-    content="Rakib is an E-commerce Expert helping businesses build, optimize and scale profitable online stores.">
-
-  <meta name="keywords"
-    content="E-commerce Expert, Shopify Expert, E-commerce Consultant, Rakib, Online Store Growth">
-
-  <meta name="author" content="Rakib">
-
-  <meta property="og:title" content="Rakib | E-commerce Expert">
-  <meta property="og:description"
-    content="Build. Optimize. Scale. Grow your e-commerce business with Rakib.">
-  <meta property="og:type" content="website">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
-    rel="stylesheet">
-
-  <style>
-
-    :root{
-      --bg:#050816;
-      --bg2:#080d20;
-      --card:rgba(255,255,255,.055);
-      --border:rgba(255,255,255,.10);
-      --text:#f7f8ff;
-      --muted:#98a1bd;
-      --blue:#5b7cff;
-      --purple:#9c6cff;
-      --cyan:#35d8ff;
-      --green:#47e5a5;
-    }
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
-    html{
-      scroll-behavior:smooth;
-    }
-
-    body{
-      background:
-      radial-gradient(circle at 80% 10%,rgba(91,124,255,.16),transparent 28%),
-      radial-gradient(circle at 10% 35%,rgba(156,108,255,.09),transparent 25%),
-      var(--bg);
-
-      color:var(--text);
-      font-family:"DM Sans",sans-serif;
-      line-height:1.6;
-      overflow-x:hidden;
-    }
-
-    body:before{
-      content:"";
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-
-      background-image:
-      linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);
-
-      background-size:50px 50px;
-
-      mask-image:linear-gradient(to bottom,black,transparent);
-    }
-
-    a{
-      color:inherit;
-      text-decoration:none;
-    }
-
-    button,input,textarea{
-      font-family:inherit;
-    }
-
-    .container{
-      width:min(1180px,calc(100% - 40px));
-      margin:auto;
-    }
-
-    section{
-      padding:110px 0;
-    }
-
-    /* NAV */
-
-    nav{
-      position:fixed;
-      top:0;
-      left:0;
-      right:0;
-      z-index:999;
-
-      background:rgba(5,8,22,.75);
-      backdrop-filter:blur(20px);
-
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-
-    .nav-inner{
-      height:76px;
-
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-    }
-
-    .logo{
-      display:flex;
-      align-items:center;
-      gap:11px;
-
-      font-family:Manrope;
-      font-size:20px;
-      font-weight:800;
-    }
-
-    .logo-icon{
-      width:40px;
-      height:40px;
-
-      display:grid;
-      place-items:center;
-
-      border-radius:13px;
-
-      background:
-      linear-gradient(135deg,var(--blue),var(--purple));
-
-      box-shadow:0 10px 35px rgba(91,124,255,.35);
-    }
-
-    .nav-links{
-      display:flex;
-      align-items:center;
-      gap:30px;
-
-      color:#bbc2d8;
-      font-size:14px;
-    }
-
-    .nav-links a{
-      transition:.25s;
-    }
-
-    .nav-links a:hover{
-      color:#fff;
-    }
-
-    .nav-cta{
-      padding:11px 18px;
-      border-radius:11px;
-
-      background:white;
-      color:#060917!important;
-
-      font-weight:700;
-    }
-
-    .menu{
-      display:none;
-
-      border:0;
-      background:none;
-      color:white;
-
-      font-size:26px;
-      cursor:pointer;
-    }
-
-    /* HERO */
-
-    .hero{
-      min-height:100vh;
-
-      display:flex;
-      align-items:center;
-
-      padding-top:150px;
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:70px;
-
-      align-items:center;
-    }
-
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:9px;
-
-      padding:8px 14px;
-
-      border:1px solid rgba(91,124,255,.3);
-      border-radius:50px;
-
-      background:rgba(91,124,255,.08);
-
-      color:#abbaff;
-
-      font-size:13px;
-      font-weight:600;
-
-      margin-bottom:25px;
-    }
-
-    .status-dot{
-      width:7px;
-      height:7px;
-
-      border-radius:50%;
-
-      background:var(--green);
-      box-shadow:0 0 15px var(--green);
-    }
-
-    h1{
-      font-family:Manrope;
-
-      font-size:clamp(48px,6vw,76px);
-
-      line-height:1.02;
-
-      letter-spacing:-4px;
-    }
-
-    .gradient{
-      background:linear-gradient(
-        100deg,
-        #fff,
-        #7895ff 50%,
-        #bd88ff
-      );
-
-      -webkit-background-clip:text;
-      color:transparent;
-    }
-
-    .hero-text{
-      max-width:620px;
-
-      margin-top:25px;
-
-      color:var(--muted);
-
-      font-size:18px;
-    }
-
-    .buttons{
-      display:flex;
-      gap:13px;
-
-      margin-top:34px;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-
-      padding:14px 21px;
-
-      border-radius:13px;
-
-      font-size:14px;
-      font-weight:700;
-
-      transition:.3s;
-    }
-
-    .primary{
-      background:linear-gradient(
-        135deg,
-        var(--blue),
-        var(--purple)
-      );
-
-      box-shadow:0 15px 40px rgba(91,124,255,.25);
-    }
-
-    .primary:hover{
-      transform:translateY(-3px);
-    }
-
-    .secondary{
-      border:1px solid var(--border);
-      background:var(--card);
-    }
-
-    .secondary:hover{
-      background:rgba(255,255,255,.09);
-    }
-
-    /* HERO DASHBOARD */
-
-    .visual{
-      min-height:530px;
-      position:relative;
-    }
-
-    .dashboard{
-      position:absolute;
-
-      top:20px;
-      right:0;
-
-      width:100%;
-      max-width:520px;
-
-      padding:22px;
-
-      border:1px solid var(--border);
-      border-radius:25px;
-
-      background:
-      linear-gradient(
-        145deg,
-        rgba(255,255,255,.09),
-        rgba(255,255,255,.025)
-      );
-
-      backdrop-filter:blur(20px);
-
-      box-shadow:0 40px 100px rgba(0,0,0,.4);
-    }
-
-    .dash-head{
-      display:flex;
-      justify-content:space-between;
-
-      padding-bottom:20px;
-    }
-
-    .dash-title{
-      font-family:Manrope;
-      font-weight:800;
-    }
-
-    .growth{
-      padding:6px 10px;
-
-      border-radius:20px;
-
-      color:#69eeb7;
-      background:rgba(71,229,165,.08);
-
-      font-size:11px;
-    }
-
-    .chart{
-      height:190px;
-
-      position:relative;
-
-      border-radius:17px;
-
-      overflow:hidden;
-
-      background:rgba(0,0,0,.15);
-    }
-
-    .grid{
-      position:absolute;
-      inset:0;
-
-      background-image:
-      linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
-
-      background-size:50px 40px;
-    }
-
-    .chart svg{
-      position:absolute;
-
-      width:100%;
-      height:100%;
-    }
-
-    .metrics{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-
-      gap:10px;
-
-      margin-top:12px;
-    }
-
-    .metric{
-      padding:16px;
-
-      border-radius:15px;
-
-      background:rgba(255,255,255,.04);
-
-      border:1px solid rgba(255,255,255,.06);
-    }
-
-    .metric small{
-      color:#7f89a5;
-      font-size:11px;
-    }
-
-    .metric strong{
-      display:block;
-
-      margin-top:4px;
-
-      font-family:Manrope;
-      font-size:20px;
-    }
-
-    .floating{
-      position:absolute;
-
-      padding:17px;
-
-      border:1px solid var(--border);
-
-      border-radius:18px;
-
-      background:rgba(9,13,33,.92);
-
-      backdrop-filter:blur(15px);
-
-      box-shadow:0 20px 50px rgba(0,0,0,.3);
-    }
-
-    .sales{
-      left:-25px;
-      bottom:55px;
-      width:190px;
-    }
-
-    .sales small{
-      color:#7e88a5;
-    }
-
-    .sales strong{
-      display:block;
-      font-size:26px;
-      margin:4px 0;
-    }
-
-    .up{
-      color:var(--green);
-      font-size:12px;
-    }
-
-    .conversion{
-      right:-5px;
-      top:45px;
-      width:175px;
-    }
-
-    .conversion small{
-      color:#7e88a5;
-    }
-
-    .conversion strong{
-      display:block;
-      font-size:24px;
-      margin:5px 0;
-    }
-
-    /* HEADINGS */
-
-    .heading{
-      max-width:680px;
-      margin-bottom:50px;
-    }
-
-    .label{
-      color:#8197ff;
-
-      font-size:12px;
-      font-weight:800;
-
-      letter-spacing:2px;
-
-      text-transform:uppercase;
-
-      margin-bottom:12px;
-    }
-
-    h2{
-      font-family:Manrope;
-
-      font-size:clamp(32px,4vw,48px);
-
-      line-height:1.1;
-
-      letter-spacing:-2px;
-    }
-
-    .heading p{
-      margin-top:16px;
-
-      color:var(--muted);
-    }
-
-    /* SERVICES */
-
-    .services{
-      display:grid;
-
-      grid-template-columns:repeat(3,1fr);
-
-      gap:16px;
-    }
-
-    .service{
-      padding:28px;
-
-      border:1px solid var(--border);
-      border-radius:22px;
-
-      background:var(--card);
-
-      transition:.3s;
-    }
-
-    .service:hover{
-      transform:translateY(-7px);
-
-      border-color:rgba(91,124,255,.4);
-    }
-
-    .icon{
-      width:48px;
-      height:48px;
-
-      display:grid;
-      place-items:center;
-
-      border-radius:14px;
-
-      background:linear-gradient(
-        135deg,
-        rgba(91,124,255,.18),
-        rgba(156,108,255,.18)
-      );
-
-      margin-bottom:20px;
-
-      font-size:21px;
-    }
-
-    .service h3{
-      font-family:Manrope;
-
-      font-size:19px;
-
-      margin-bottom:9px;
-    }
-
-    .service p{
-      color:var(--muted);
-
-      font-size:14px;
-    }
-
-    /* ABOUT */
-
-    .about-grid{
-      display:grid;
-
-      grid-template-columns:.9fr 1.1fr;
-
-      gap:80px;
-
-      align-items:center;
-    }
-
-    .about-image{
-      min-height:430px;
-
-      position:relative;
-
-      display:grid;
-      place-items:center;
-
-      overflow:hidden;
-
-      border:1px solid var(--border);
-      border-radius:30px;
-
-      background:
-      radial-gradient(
-        circle at center,
-        rgba(91,124,255,.35),
-        transparent 30%
-      ),
-      #0a1027;
-    }
-
-    .orbit{
-      position:absolute;
-
-      border:1px solid rgba(255,255,255,.08);
-
-      border-radius:50%;
-    }
-
-    .orbit1{
-      width:300px;
-      height:300px;
-    }
-
-    .orbit2{
-      width:480px;
-      height:480px;
-    }
-
-    .big-logo{
-      width:150px;
-      height:150px;
-
-      display:grid;
-      place-items:center;
-
-      border-radius:40px;
-
-      font-family:Manrope;
-
-      font-size:55px;
-      font-weight:800;
-
-      background:linear-gradient(
-        135deg,
-        var(--blue),
-        var(--purple)
-      );
-
-      box-shadow:0 30px 90px rgba(91,124,255,.4);
-    }
-
-    .about-text p{
-      color:var(--muted);
-
-      margin:18px 0;
-    }
-
-    .checks{
-      display:grid;
-
-      grid-template-columns:1fr 1fr;
-
-      gap:13px;
-
-      margin-top:25px;
-    }
-
-    .check{
-      color:#dce2f2;
-
-      font-size:14px;
-    }
-
-    .check span{
-      color:var(--green);
-      margin-right:7px;
-    }
-
-    /* STATS */
-
-    .stats{
-      padding:50px 0;
-
-      border-top:1px solid rgba(255,255,255,.07);
-      border-bottom:1px solid rgba(255,255,255,.07);
-
-      background:rgba(255,255,255,.015);
-    }
-
-    .stats-grid{
-      display:grid;
-
-      grid-template-columns:repeat(4,1fr);
-
-      text-align:center;
-
-      gap:20px;
-    }
-
-    .stat strong{
-      font-family:Manrope;
-
-      font-size:40px;
-    }
-
-    .stat p{
-      color:var(--muted);
-
-      font-size:13px;
-    }
-
-    /* PROCESS */
-
-    .process{
-      display:grid;
-
-      grid-template-columns:repeat(4,1fr);
-
-      gap:15px;
-    }
-
-    .step{
-      padding:25px;
-
-      border:1px solid var(--border);
-
-      border-radius:20px;
-
-      background:var(--card);
-    }
-
-    .step-number{
-      color:#7e91ff;
-
-      font-size:12px;
-      font-weight:800;
-
-      margin-bottom:25px;
-    }
-
-    .step h3{
-      font-family:Manrope;
-
-      margin-bottom:8px;
-    }
-
-    .step p{
-      color:var(--muted);
-
-      font-size:13px;
-    }
-
-    /* WORK */
-
-    .work{
-      display:grid;
-
-      grid-template-columns:1.2fr .8fr;
-
-      gap:16px;
-    }
-
-    .project{
-      min-height:300px;
-
-      position:relative;
-
-      display:flex;
-      flex-direction:column;
-      justify-content:flex-end;
-
-      padding:30px;
-
-      overflow:hidden;
-
-      border:1px solid var(--border);
-      border-radius:24px;
-    }
-
-    .project:first-child{
-      min-height:490px;
-
-      background:
-      radial-gradient(
-        circle at 70% 20%,
-        rgba(53,216,255,.25),
-        transparent 28%
-      ),
-      #0a1630;
-    }
-
-    .project:nth-child(2){
-      background:
-      radial-gradient(
-        circle at 70% 20%,
-        rgba(156,108,255,.3),
-        transparent 30%
-      ),
-      #0d1028;
-    }
-
-    .project:nth-child(3){
-      background:
-      radial-gradient(
-        circle at 20% 20%,
-        rgba(71,229,165,.22),
-        transparent 30%
-      ),
-      #091e20;
-    }
-
-    .tag{
-      color:#9eaeff;
-
-      font-size:11px;
-      letter-spacing:1.5px;
-
-      margin-bottom:7px;
-    }
-
-    .project h3{
-      font-family:Manrope;
-      font-size:25px;
-    }
-
-    .project p{
-      max-width:500px;
-
-      color:#a1aac1;
-
-      font-size:13px;
-    }
-
-    .arrow{
-      position:absolute;
-
-      top:22px;
-      right:22px;
-
-      width:42px;
-      height:42px;
-
-      display:grid;
-      place-items:center;
-
-      border-radius:50%;
-
-      background:rgba(255,255,255,.08);
-    }
-
-    /* TESTIMONIAL */
-
-    .testimonial{
-      max-width:850px;
-
-      margin:auto;
-
-      padding:50px;
-
-      text-align:center;
-
-      border:1px solid var(--border);
-
-      border-radius:28px;
-
-      background:linear-gradient(
-        145deg,
-        rgba(255,255,255,.07),
-        rgba(255,255,255,.02)
-      );
-    }
-
-    .quote{
-      font-family:Manrope;
-
-      font-size:clamp(23px,3vw,33px);
-
-      line-height:1.35;
-    }
-
-    .client{
-      margin-top:25px;
-
-      color:var(--muted);
-
-      font-size:13px;
-    }
-
-    /* FAQ */
-
-    .faq{
-      max-width:800px;
-      margin:auto;
-    }
-
-    .faq-item{
-      border-bottom:1px solid rgba(255,255,255,.08);
-    }
-
-    .faq-question{
-      width:100%;
-
-      padding:22px 0;
-
-      display:flex;
-      justify-content:space-between;
-
-      border:0;
-
-      background:none;
-
-      color:white;
-
-      text-align:left;
-
-      cursor:pointer;
-
-      font-size:16px;
-      font-weight:600;
-    }
-
-    .faq-answer{
-      max-height:0;
-
-      overflow:hidden;
-
-      color:var(--muted);
-
-      font-size:14px;
-
-      transition:max-height .3s ease;
-    }
-
-    .faq-answer p{
-      padding-bottom:20px;
-    }
-
-    .faq-item.active .faq-answer{
-      max-height:150px;
-    }
-
-    .plus{
-      transition:.3s;
-    }
-
-    .faq-item.active .plus{
-      transform:rotate(45deg);
-    }
-
-    /* CONTACT */
-
-    .contact{
-      display:grid;
-
-      grid-template-columns:1fr .8fr;
-
-      gap:60px;
-
-      align-items:start;
-
-      padding:55px;
-
-      border:1px solid rgba(91,124,255,.25);
-
-      border-radius:30px;
-
-      background:
-      radial-gradient(
-        circle at 80% 0%,
-        rgba(156,108,255,.25),
-        transparent 35%
-      ),
-      #0a1029;
-    }
-
-    .contact-description{
-      color:var(--muted);
-
-      margin-top:15px;
-
-      max-width:540px;
-    }
-
-    .contact-form{
-      display:grid;
-
-      gap:13px;
-    }
-
-    .contact-form input,
-    .contact-form textarea{
-      width:100%;
-
-      padding:15px 16px;
-
-      color:white;
-
-      border:1px solid rgba(255,255,255,.09);
-
-      border-radius:13px;
-
-      outline:none;
-
-      background:rgba(255,255,255,.05);
-    }
-
-    .contact-form textarea{
-      min-height:130px;
-      resize:vertical;
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus{
-      border-color:rgba(91,124,255,.6);
-    }
-
-    .contact-info{
-      display:grid;
-      gap:12px;
-
-      margin-top:25px;
-    }
-
-    .contact-item{
-      padding:15px;
-
-      border:1px solid rgba(255,255,255,.07);
-
-      border-radius:13px;
-
-      background:rgba(255,255,255,.035);
-
-      font-size:14px;
-    }
-
-    .contact-item small{
-      display:block;
-
-      color:#7f89a5;
-
-      margin-bottom:3px;
-    }
-
-    /* FOOTER */
-
-    footer{
-      padding:60px 0 25px;
-
-      border-top:1px solid rgba(255,255,255,.06);
-    }
-
-    .footer-top{
-      display:flex;
-
-      justify-content:space-between;
-
-      gap:50px;
-
-      padding-bottom:45px;
-    }
-
-    .footer-description{
-      max-width:360px;
-
-      margin-top:15px;
-
-      color:var(--muted);
-
-      font-size:14px;
-    }
-
-    .footer-links{
-      display:flex;
-      gap:80px;
-    }
-
-    .footer-column h4{
-      margin-bottom:13px;
-
-      font-size:13px;
-    }
-
-    .footer-column a{
-      display:block;
-
-      margin:8px 0;
-
-      color:#858ea9;
-
-      font-size:13px;
-    }
-
-    .footer-column a:hover{
-      color:white;
-    }
-
-    .copyright{
-      display:flex;
-      justify-content:space-between;
-
-      padding-top:22px;
-
-      border-top:1px solid rgba(255,255,255,.06);
-
-      color:#66708b;
-
-      font-size:12px;
-    }
-
-    /* WHATSAPP */
-
-    .whatsapp{
-      position:fixed;
-
-      right:22px;
-      bottom:22px;
-
-      z-index:1000;
-
-      width:58px;
-      height:58px;
-
-      display:grid;
-      place-items:center;
-
-      border-radius:50%;
-
-      background:#25D366;
-
-      color:white;
-
-      font-size:27px;
-
-      box-shadow:0 10px 35px rgba(37,211,102,.35);
-
-      transition:.3s;
-    }
-
-    .whatsapp:hover{
-      transform:translateY(-4px) scale(1.05);
-    }
-
-    /* ANIMATION */
-
-    .reveal{
-      opacity:0;
-
-      transform:translateY(25px);
-
-      transition:.7s ease;
-    }
-
-    .reveal.show{
-      opacity:1;
-
-      transform:translateY(0);
-    }
-
-    /* RESPONSIVE */
-
-    @media(max-width:900px){
-
-      .nav-links{
-        display:none;
-
-        position:absolute;
-
-        top:76px;
-        left:15px;
-        right:15px;
-
-        padding:20px;
-
-        flex-direction:column;
-        align-items:flex-start;
-
-        background:#0a0e22;
-
-        border:1px solid var(--border);
-
-        border-radius:16px;
-      }
-
-      .nav-links.active{
-        display:flex;
-      }
-
-      .menu{
-        display:block;
-      }
-
-      .hero-grid,
-      .about-grid,
-      .contact{
-        grid-template-columns:1fr;
-      }
-
-      .services{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      .process{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      .stats-grid{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      .work{
-        grid-template-columns:1fr;
-      }
-
-      .footer-top{
-        flex-direction:column;
-      }
-    }
-
-    @media(max-width:600px){
-
-      .container{
-        width:calc(100% - 28px);
-      }
-
-      section{
-        padding:75px 0;
-      }
-
-      h1{
-        font-size:45px;
-
-        letter-spacing:-2.5px;
-      }
-
-      .hero{
-        padding-top:120px;
-      }
-
-      .hero-text{
-        font-size:16px;
-      }
-
-      .buttons{
-        flex-direction:column;
-      }
-
-      .visual{
-        min-height:420px;
-      }
-
-      .dashboard{
-        padding:15px;
-      }
-
-      .floating{
-        transform:scale(.82);
-      }
-
-      .sales{
-        left:-15px;
-      }
-
-      .conversion{
-        right:-15px;
-      }
-
-      .metrics{
-        grid-template-columns:1fr;
-      }
-
-      .chart{
-        height:140px;
-      }
-
-      .services,
-      .process{
-        grid-template-columns:1fr;
-      }
-
-      .checks{
-        grid-template-columns:1fr;
-      }
-
-      .testimonial{
-        padding:30px 20px;
-      }
-
-      .contact{
-        padding:30px 20px;
-      }
-
-      .footer-links{
-        gap:35px;
-      }
-
-      .copyright{
-        flex-direction:column;
-        gap:8px;
-      }
-    }
-
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Anamika — E-Commerce Growth Agency</title>
+
+<meta name="description"
+content="Anamika helps ambitious e-commerce brands grow across Amazon, Shopify, Walmart and eBay.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#05030a;
+  --bg2:#090611;
+  --card:rgba(255,255,255,.045);
+  --card2:rgba(255,255,255,.025);
+  --border:rgba(255,255,255,.09);
+
+  --purple:#8b5cf6;
+  --purple2:#6d28d9;
+  --pink:#d946ef;
+  --pink2:#c026d3;
+  --cyan:#22d3ee;
+  --green:#34d399;
+
+  --white:#fff;
+  --text:#e9e5ef;
+  --muted:#8e8799;
+  --dim:#625c6d;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--bg);
+  color:var(--white);
+  font-family:"DM Sans",sans-serif;
+  overflow-x:hidden;
+}
+
+body:after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  pointer-events:none;
+  opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+}
+
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-10;
+  pointer-events:none;
+  background:
+    linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+  background-size:70px 70px;
+  mask-image:linear-gradient(to bottom,black,transparent 90%);
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button,input,textarea,select{
+  font-family:inherit;
+}
+
+::selection{
+  background:var(--purple);
+  color:white;
+}
+
+.container{
+  width:min(1180px,92%);
+  margin:auto;
+}
+
+/* =====================================
+   LOADER
+===================================== */
+
+.loader{
+  position:fixed;
+  inset:0;
+  z-index:10000;
+  display:grid;
+  place-items:center;
+  background:#05030a;
+  transition:.8s ease;
+}
+
+.loader.hide{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+
+.loader-inner{
+  text-align:center;
+}
+
+.loader-logo{
+  width:65px;
+  height:65px;
+  margin:auto auto 20px;
+  display:grid;
+  place-items:center;
+  border-radius:19px;
+  background:linear-gradient(135deg,#a78bfa,#7c3aed,#d946ef);
+  box-shadow:0 0 50px rgba(139,92,246,.45);
+  font:800 28px Manrope;
+  animation:loaderPulse 1.2s infinite;
+}
+
+.loader-bar{
+  width:180px;
+  height:2px;
+  overflow:hidden;
+  background:rgba(255,255,255,.08);
+  border-radius:10px;
+}
+
+.loader-bar span{
+  display:block;
+  height:100%;
+  width:0;
+  background:linear-gradient(90deg,#7c3aed,#d946ef);
+  animation:load 1.7s forwards;
+}
+
+@keyframes load{
+  to{width:100%}
+}
+
+@keyframes loaderPulse{
+  50%{
+    transform:scale(1.06);
+    box-shadow:0 0 70px rgba(139,92,246,.7);
+  }
+}
+
+/* =====================================
+   CURSOR GLOW
+===================================== */
+
+.cursor{
+  position:fixed;
+  width:450px;
+  height:450px;
+  pointer-events:none;
+  z-index:-2;
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(
+    circle,
+    rgba(139,92,246,.12),
+    transparent 67%
+  );
+}
+
+/* =====================================
+   BACKGROUND
+===================================== */
+
+.aurora{
+  position:absolute;
+  pointer-events:none;
+  filter:blur(70px);
+  opacity:.28;
+  border-radius:50%;
+}
+
+.aurora.a{
+  width:550px;
+  height:550px;
+  top:-260px;
+  left:-220px;
+  background:#6d28d9;
+  animation:aurora1 13s ease-in-out infinite alternate;
+}
+
+.aurora.b{
+  width:500px;
+  height:500px;
+  top:300px;
+  right:-240px;
+  background:#be185d;
+  animation:aurora2 15s ease-in-out infinite alternate;
+}
+
+.aurora.c{
+  width:400px;
+  height:400px;
+  top:1250px;
+  left:30%;
+  background:#1d4ed8;
+  opacity:.13;
+  animation:aurora1 17s ease-in-out infinite alternate;
+}
+
+@keyframes aurora1{
+  to{
+    transform:translate(110px,90px) scale(1.18);
+  }
+}
+
+@keyframes aurora2{
+  to{
+    transform:translate(-120px,-80px) scale(1.12);
+  }
+}
+
+/* =====================================
+   PARTICLES
+===================================== */
+
+.particles{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+}
+
+.particle{
+  position:absolute;
+  width:2px;
+  height:2px;
+  border-radius:50%;
+  background:#c4b5fd;
+  box-shadow:0 0 10px #a78bfa;
+  animation:particleFloat linear infinite;
+}
+
+@keyframes particleFloat{
+  from{
+    transform:translateY(100vh);
+    opacity:0;
+  }
+  15%{opacity:.8}
+  85%{opacity:.5}
+  to{
+    transform:translateY(-20vh);
+    opacity:0;
+  }
+}
+
+/* =====================================
+   NAV
+===================================== */
+
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:5000;
+  padding:18px 0;
+  transition:.4s;
+}
+
+header.scrolled{
+  padding:8px 0;
+}
+
+nav{
+  height:62px;
+  padding:0 17px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:18px;
+  background:rgba(7,4,13,.6);
+  backdrop-filter:blur(25px);
+  transition:.4s;
+}
+
+header.scrolled nav{
+  background:rgba(7,4,13,.9);
+  box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font:800 21px Manrope;
+  letter-spacing:-1px;
+}
+
+.logo-mark{
+  width:37px;
+  height:37px;
+  display:grid;
+  place-items:center;
+  position:relative;
+  overflow:hidden;
+  border-radius:11px;
+  background:linear-gradient(135deg,#a78bfa,#7c3aed,#d946ef);
+  box-shadow:
+    0 0 28px rgba(139,92,246,.42),
+    inset 0 1px rgba(255,255,255,.4);
+}
+
+.logo-mark:after{
+  content:"";
+  position:absolute;
+  width:90px;
+  height:18px;
+  background:rgba(255,255,255,.35);
+  transform:rotate(-45deg) translateX(-100px);
+  animation:logoShine 4s infinite;
+}
+
+.logo-mark span{
+  position:relative;
+  z-index:2;
+}
+
+@keyframes logoShine{
+  20%,100%{
+    transform:rotate(-45deg) translateX(120px);
+  }
+}
+
+.logo span{
+  color:#a78bfa;
+}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  align-items:center;
+  gap:29px;
+}
+
+.nav-links a{
+  color:#9c96a7;
+  font-size:11px;
+  font-weight:700;
+  transition:.3s;
+  position:relative;
+}
+
+.nav-links a:hover{
+  color:#fff;
+}
+
+.nav-links a:not(.nav-cta):after{
+  content:"";
+  position:absolute;
+  bottom:-7px;
+  left:0;
+  width:0;
+  height:1px;
+  background:#a78bfa;
+  transition:.3s;
+}
+
+.nav-links a:hover:after{
+  width:100%;
+}
+
+.nav-cta{
+  padding:11px 18px;
+  color:white!important;
+  border-radius:9px;
+  background:linear-gradient(135deg,#7c3aed,#c026d3);
+  box-shadow:0 10px 30px rgba(124,58,237,.25);
+}
+
+.menu{
+  display:none;
+  cursor:pointer;
+  font-size:24px;
+}
+
+/* =====================================
+   HERO
+===================================== */
+
+.hero{
+  min-height:100vh;
+  padding:175px 0 100px;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:55px;
+  align-items:center;
+}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:8px 13px;
+  margin-bottom:24px;
+  border:1px solid rgba(167,139,250,.22);
+  border-radius:50px;
+  background:rgba(139,92,246,.07);
+  color:#c4b5fd;
+  text-transform:uppercase;
+  letter-spacing:1.7px;
+  font-size:9px;
+  font-weight:800;
+  animation:eyebrow 3s ease-in-out infinite;
+}
+
+@keyframes eyebrow{
+  50%{transform:translateY(-4px)}
+}
+
+.dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#34d399;
+  box-shadow:0 0 16px #34d399;
+  animation:dot 1.5s infinite;
+}
+
+@keyframes dot{
+  50%{
+    transform:scale(.55);
+    box-shadow:0 0 4px #34d399;
+  }
+}
+
+.hero h1{
+  max-width:700px;
+  font:800 clamp(50px,6vw,78px)/.98 Manrope;
+  letter-spacing:-4.5px;
+  margin-bottom:25px;
+}
+
+.gradient{
+  background:
+    linear-gradient(
+      100deg,
+      #fff,
+      #c4b5fd,
+      #e879f9,
+      #a78bfa,
+      #fff
+    );
+  background-size:300%;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:gradientMove 6s linear infinite;
+}
+
+@keyframes gradientMove{
+  to{background-position:300%}
+}
+
+.hero-text{
+  max-width:590px;
+  color:#938c9e;
+  font-size:14px;
+  line-height:1.9;
+  margin-bottom:30px;
+}
+
+.buttons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  position:relative;
+  overflow:hidden;
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+  padding:14px 21px;
+  border-radius:10px;
+  font-size:11px;
+  font-weight:800;
+  transition:.35s;
+}
+
+.btn:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    100deg,
+    transparent,
+    rgba(255,255,255,.2),
+    transparent
+  );
+  transform:translateX(-120%);
+  transition:.7s;
+}
+
+.btn:hover:before{
+  transform:translateX(120%);
+}
+
+.btn-main{
+  background:linear-gradient(135deg,#7c3aed,#c026d3);
+  box-shadow:0 15px 45px rgba(124,58,237,.28);
+}
+
+.btn-main:hover{
+  box-shadow:0 20px 60px rgba(124,58,237,.45);
+}
+
+.btn-outline{
+  border:1px solid rgba(255,255,255,.1);
+  background:rgba(255,255,255,.035);
+}
+
+.btn-outline:hover{
+  background:rgba(255,255,255,.07);
+}
+
+/* =====================================
+   DASHBOARD
+===================================== */
+
+.visual{
+  min-height:510px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+  perspective:1200px;
+}
+
+.dashboard-ring{
+  position:absolute;
+  width:470px;
+  height:470px;
+  border:1px solid rgba(139,92,246,.13);
+  border-radius:50%;
+  animation:spin 28s linear infinite;
+}
+
+.dashboard-ring:before{
+  content:"";
+  position:absolute;
+  width:11px;
+  height:11px;
+  left:75px;
+  top:35px;
+  border-radius:50%;
+  background:#d946ef;
+  box-shadow:0 0 25px #d946ef;
+}
+
+.dashboard-ring:after{
+  content:"";
+  position:absolute;
+  width:7px;
+  height:7px;
+  right:45px;
+  bottom:100px;
+  border-radius:50%;
+  background:#22d3ee;
+  box-shadow:0 0 20px #22d3ee;
+}
+
+@keyframes spin{
+  to{transform:rotate(360deg)}
+}
+
+.dashboard{
+  width:445px;
+  padding:23px;
+  position:relative;
+  z-index:3;
+  border-radius:25px;
+  border:1px solid rgba(255,255,255,.12);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.085),
+      rgba(255,255,255,.025)
+    );
+  backdrop-filter:blur(25px);
+  box-shadow:
+    0 45px 110px rgba(0,0,0,.55),
+    inset 0 1px rgba(255,255,255,.12);
+  transform:rotateY(-5deg) rotateX(3deg);
+  transition:.15s;
+}
+
+.dash-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.dash-title{
+  font:800 14px Manrope;
+}
+
+.live{
+  padding:5px 9px;
+  border-radius:30px;
+  color:#34d399;
+  background:rgba(52,211,153,.09);
+  font-size:8px;
+  font-weight:800;
+}
+
+.chart{
+  height:185px;
+  position:relative;
+  overflow:hidden;
+  border-radius:14px;
+  background:
+    linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+  background-size:47px 47px;
+}
+
+.chart svg{
+  width:100%;
+  height:100%;
+}
+
+.chart-line{
+  stroke-dasharray:1000;
+  stroke-dashoffset:1000;
+  animation:drawChart 3s ease forwards infinite alternate;
+}
+
+@keyframes drawChart{
+  to{stroke-dashoffset:0}
+}
+
+.dash-stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:9px;
+  margin-top:13px;
+}
+
+.dash-stat{
+  padding:13px 11px;
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:12px;
+  background:rgba(0,0,0,.2);
+}
+
+.dash-stat small{
+  display:block;
+  color:#777181;
+  font-size:8px;
+  margin-bottom:5px;
+}
+
+.dash-stat strong{
+  font:800 18px Manrope;
+}
+
+.green{
+  color:#34d399;
+}
+
+.floating{
+  position:absolute;
+  z-index:5;
+  padding:13px 16px;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:14px;
+  background:rgba(9,6,15,.88);
+  backdrop-filter:blur(18px);
+  box-shadow:0 25px 60px rgba(0,0,0,.45);
+  animation:float 4s ease-in-out infinite;
+}
+
+.float1{
+  left:-10px;
+  top:60px;
+}
+
+.float2{
+  right:-8px;
+  bottom:62px;
+  animation-delay:1s;
+}
+
+.float3{
+  right:0;
+  top:55px;
+  transform:scale(.82);
+  animation-delay:2s;
+}
+
+.floating small{
+  display:block;
+  color:#716b7c;
+  font-size:8px;
+  margin-bottom:4px;
+}
+
+.floating strong{
+  font:800 16px Manrope;
+}
+
+@keyframes float{
+  50%{
+    transform:translateY(-12px) rotate(1deg);
+  }
+}
+
+/* =====================================
+   TRUST BAR
+===================================== */
+
+.trust{
+  padding:25px 0;
+  border-top:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  background:rgba(255,255,255,.012);
+}
+
+.trust-inner{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:45px;
+  flex-wrap:wrap;
+}
+
+.trust-label{
+  color:#5f5969;
+  font-size:9px;
+  letter-spacing:1.8px;
+  font-weight:800;
+  text-transform:uppercase;
+}
+
+.platform{
+  color:#686272;
+  font:800 14px Manrope;
+  transition:.4s;
+  filter:grayscale(1);
+}
+
+.platform:hover{
+  color:#c4b5fd;
+  filter:grayscale(0);
+  transform:translateY(-3px);
+}
+
+/* =====================================
+   SECTION COMMON
+===================================== */
+
+section{
+  position:relative;
+  padding:120px 0;
+}
+
+.label{
+  color:#a78bfa;
+  font-size:9px;
+  letter-spacing:2.7px;
+  font-weight:800;
+  text-transform:uppercase;
+  margin-bottom:13px;
+}
+
+.section-heading{
+  max-width:720px;
+  margin-bottom:53px;
+}
+
+.section-heading h2{
+  font:800 clamp(36px,4.6vw,58px)/1.04 Manrope;
+  letter-spacing:-3px;
+  margin-bottom:17px;
+}
+
+.section-heading p{
+  color:#898291;
+  font-size:13px;
+  line-height:1.85;
+}
+
+.reveal{
+  opacity:0;
+  transform:translateY(45px);
+  filter:blur(5px);
+  transition:
+    opacity .9s ease,
+    transform .9s cubic-bezier(.2,.8,.2,1),
+    filter .9s ease;
+}
+
+.reveal.show{
+  opacity:1;
+  transform:none;
+  filter:none;
+}
+
+/* =====================================
+   SERVICES
+===================================== */
+
+.services{
+  background:
+    radial-gradient(
+      circle at 10% 50%,
+      rgba(109,40,217,.08),
+      transparent 35%
+    );
+}
+
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+
+.service{
+  min-height:260px;
+  padding:27px;
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:19px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.06),
+      rgba(255,255,255,.018)
+    );
+  transition:.5s cubic-bezier(.2,.8,.2,1);
+  transform-style:preserve-3d;
+}
+
+.service:before{
+  content:"";
+  position:absolute;
+  width:190px;
+  height:190px;
+  right:-100px;
+  bottom:-100px;
+  border-radius:50%;
+  background:#8b5cf6;
+  filter:blur(80px);
+  opacity:0;
+  transition:.5s;
+}
+
+.service:hover{
+  transform:translateY(-12px) rotateX(2deg) rotateY(-2deg);
+  border-color:rgba(167,139,250,.3);
+  box-shadow:
+    0 30px 75px rgba(0,0,0,.35),
+    0 0 35px rgba(139,92,246,.08);
+}
+
+.service:hover:before{
+  opacity:.3;
+}
+
+.service-number{
+  position:absolute;
+  top:17px;
+  right:20px;
+  color:rgba(255,255,255,.08);
+  font:800 25px Manrope;
+}
+
+.icon{
+  width:49px;
+  height:49px;
+  display:grid;
+  place-items:center;
+  margin-bottom:25px;
+  border-radius:14px;
+  border:1px solid rgba(167,139,250,.13);
+  background:rgba(139,92,246,.1);
+  font-size:20px;
+  transition:.4s;
+}
+
+.service:hover .icon{
+  transform:translateZ(20px) rotate(-8deg) scale(1.12);
+  background:linear-gradient(135deg,#7c3aed,#c026d3);
+  box-shadow:0 12px 35px rgba(139,92,246,.35);
+}
+
+.service h3{
+  position:relative;
+  font:800 14px Manrope;
+  margin-bottom:10px;
+}
+
+.service p{
+  position:relative;
+  color:#80798b;
+  font-size:10.5px;
+  line-height:1.75;
+}
+
+.service-arrow{
+  position:absolute;
+  bottom:22px;
+  right:22px;
+  color:#777080;
+  transition:.4s;
+}
+
+.service:hover .service-arrow{
+  color:#c4b5fd;
+  transform:translate(4px,-4px);
+}
+
+/* =====================================
+   STATS
+===================================== */
+
+.stats{
+  padding:75px 0;
+  border-top:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  background:rgba(255,255,255,.012);
+}
+
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+}
+
+.stat{
+  text-align:center;
+  position:relative;
+}
+
+.stat:after{
+  content:"";
+  position:absolute;
+  top:10%;
+  right:0;
+  height:80%;
+  width:1px;
+  background:rgba(255,255,255,.06);
+}
+
+.stat:last-child:after{
+  display:none;
+}
+
+.counter{
+  font:800 48px Manrope;
+  letter-spacing:-3px;
+}
+
+.counter span{
+  color:#a78bfa;
+}
+
+.stat p{
+  margin-top:5px;
+  color:#6f6979;
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+/* =====================================
+   BEFORE AFTER
+===================================== */
+
+.comparison{
+  background:#08060e;
+}
+
+.compare-wrap{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.compare-card{
+  padding:30px;
+  border-radius:21px;
+  border:1px solid rgba(255,255,255,.07);
+  background:rgba(255,255,255,.025);
+}
+
+.compare-card.after{
+  border-color:rgba(139,92,246,.22);
+  background:
+    radial-gradient(
+      circle at 100% 0,
+      rgba(139,92,246,.13),
+      transparent 40%
+    ),
+    rgba(255,255,255,.025);
+}
+
+.compare-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:27px;
+}
+
+.compare-title h3{
+  font:800 15px Manrope;
+}
+
+.badge{
+  padding:5px 9px;
+  border-radius:20px;
+  font-size:8px;
+  font-weight:800;
+  background:rgba(255,255,255,.06);
+  color:#888291;
+}
+
+.after .badge{
+  color:#34d399;
+  background:rgba(52,211,153,.08);
+}
+
+.metric{
+  margin-bottom:21px;
+}
+
+.metric-top{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:8px;
+  color:#8a8393;
+  font-size:9px;
+}
+
+.metric-value{
+  color:white;
+  font:800 14px Manrope;
+}
+
+.progress{
+  height:5px;
+  overflow:hidden;
+  border-radius:10px;
+  background:rgba(255,255,255,.06);
+}
+
+.progress span{
+  display:block;
+  width:0;
+  height:100%;
+  border-radius:10px;
+  background:linear-gradient(90deg,#6d28d9,#d946ef);
+  transition:1.7s cubic-bezier(.2,.8,.2,1);
+}
+
+.show .progress span{
+  width:var(--width);
+}
+
+/* =====================================
+   CASE STUDY
+===================================== */
+
+.case-study{
+  padding-top:80px;
+}
+
+.case-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:35px;
+  align-items:center;
+}
+
+.case-visual{
+  min-height:440px;
+  padding:30px;
+  overflow:hidden;
+  position:relative;
+  border-radius:25px;
+  border:1px solid rgba(255,255,255,.08);
+  background:
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(124,58,237,.28),
+      transparent 45%
+    ),
+    #0c0814;
+}
+
+.case-chart{
+  height:300px;
+  margin-top:25px;
+  position:relative;
+  background:
+    linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:50px 50px;
+  border-radius:15px;
+}
+
+.case-chart svg{
+  width:100%;
+  height:100%;
+}
+
+.case-line{
+  stroke-dasharray:1000;
+  stroke-dashoffset:1000;
+}
+
+.case-visual.show .case-line{
+  animation:caseDraw 2.5s forwards ease-out;
+}
+
+@keyframes caseDraw{
+  to{stroke-dashoffset:0}
+}
+
+.case-content h2{
+  font:800 clamp(36px,4vw,52px)/1.05 Manrope;
+  letter-spacing:-2.5px;
+  margin-bottom:18px;
+}
+
+.case-content>p{
+  color:#85808f;
+  font-size:12px;
+  line-height:1.85;
+  margin-bottom:27px;
+}
+
+.case-list{
+  list-style:none;
+  display:grid;
+  gap:11px;
+}
+
+.case-list li{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#bbb5c5;
+  font-size:11px;
+}
+
+.check{
+  width:20px;
+  height:20px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  color:#a78bfa;
+  background:rgba(139,92,246,.1);
+}
+
+/* =====================================
+   ABOUT
+===================================== */
+
+.about{
+  background:#08060e;
+}
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:85px;
+  align-items:center;
+}
+
+.about-art{
+  min-height:470px;
+  position:relative;
+}
+
+.about-box{
+  position:absolute;
+  inset:5px;
+  overflow:hidden;
+  border-radius:27px;
+  border:1px solid rgba(255,255,255,.08);
+  background:
+    radial-gradient(circle at 70% 20%,rgba(217,70,239,.35),transparent 25%),
+    radial-gradient(circle at 20% 80%,rgba(124,58,237,.42),transparent 30%),
+    linear-gradient(135deg,#1b1030,#0b0712);
+}
+
+.grid-lines{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+  background-size:35px 35px;
+  animation:gridMove 15s linear infinite;
+}
+
+@keyframes gridMove{
+  to{background-position:70px 70px}
+}
+
+.orbit{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:290px;
+  height:290px;
+  transform:translate(-50%,-50%);
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:50%;
+  animation:spin 15s linear infinite;
+}
+
+.orbit:before{
+  content:"";
+  position:absolute;
+  width:12px;
+  height:12px;
+  left:50%;
+  top:14px;
+  border-radius:50%;
+  background:#d946ef;
+  box-shadow:0 0 25px #d946ef;
+}
+
+.about-center{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:175px;
+  height:175px;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.06);
+  backdrop-filter:blur(16px);
+  box-shadow:0 0 100px rgba(139,92,246,.3);
+}
+
+.about-center strong{
+  display:block;
+  font:800 39px Manrope;
+  background:linear-gradient(90deg,#a78bfa,#e879f9);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.about-center span{
+  color:#8e8799;
+  font-size:8px;
+}
+
+.mini{
+  position:absolute;
+  padding:11px 14px;
+  border-radius:11px;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(7,4,12,.8);
+  backdrop-filter:blur(15px);
+  font-size:9px;
+  animation:miniFloat 4s ease-in-out infinite;
+}
+
+.m1{left:28px;top:43px}
+.m2{right:25px;top:90px;animation-delay:.7s}
+.m3{left:43px;bottom:52px;animation-delay:1.4s}
+.m4{right:28px;bottom:43px;animation-delay:2s}
+
+@keyframes miniFloat{
+  50%{transform:translateY(-9px)}
+}
+
+.about-copy h2{
+  font:800 clamp(36px,4vw,53px)/1.07 Manrope;
+  letter-spacing:-2.5px;
+  margin-bottom:19px;
+}
+
+.about-copy>p{
+  color:#888191;
+  font-size:13px;
+  line-height:1.85;
+  margin-bottom:27px;
+}
+
+.checks{
+  list-style:none;
+  display:grid;
+  gap:12px;
+}
+
+.checks li{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#c7c2cd;
+  font-size:11px;
+}
+
+/* =====================================
+   SCORECARD
+===================================== */
+
+.score-section{
+  background:
+    radial-gradient(
+      circle at 80% 50%,
+      rgba(109,40,217,.08),
+      transparent 35%
+    );
+}
+
+.score-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.score-card{
+  padding:28px;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.07);
+  background:rgba(255,255,255,.025);
+}
+
+.score-row{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  padding:15px 0;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.score-row:last-child{
+  border-bottom:0;
+}
+
+.score-icon{
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border-radius:11px;
+  background:rgba(139,92,246,.1);
+}
+
+.score-row h4{
+  font:700 12px Manrope;
+  margin-bottom:3px;
+}
+
+.score-row p{
+  color:#6f6978;
+  font-size:9px;
+}
+
+.score-number{
+  margin-left:auto;
+  color:#c4b5fd;
+  font:800 16px Manrope;
+}
+
+/* =====================================
+   PROCESS
+===================================== */
+
+.process{
+  background:#08060e;
+}
+
+.process-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.process-card{
+  min-height:275px;
+  padding:30px;
+  position:relative;
+  overflow:hidden;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.07);
+  background:rgba(255,255,255,.025);
+  transition:.4s;
+}
+
+.process-card:hover{
+  transform:translateY(-10px);
+  border-color:rgba(139,92,246,.28);
+  background:rgba(139,92,246,.045);
+}
+
+.process-number{
+  position:absolute;
+  right:20px;
+  top:0;
+  color:rgba(255,255,255,.035);
+  font:800 75px Manrope;
+}
+
+.process-icon{
+  font-size:25px;
+  margin-top:35px;
+  margin-bottom:20px;
+}
+
+.process-card h3{
+  font:800 16px Manrope;
+  margin-bottom:11px;
+}
+
+.process-card p{
+  color:#80798b;
+  font-size:11px;
+  line-height:1.8;
+}
+
+.process-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
+  margin-top:20px;
+}
+
+.process-tags span{
+  padding:5px 8px;
+  border-radius:20px;
+  color:#8d8697;
+  background:rgba(255,255,255,.04);
+  font-size:7px;
+}
+
+/* =====================================
+   TESTIMONIALS
+===================================== */
+
+.testimonials{
+  overflow:hidden;
+}
+
+.testimonial-track{
+  display:flex;
+  gap:15px;
+  width:max-content;
+  animation:testimonialScroll 32s linear infinite;
+}
+
+.testimonial-track:hover{
+  animation-play-state:paused;
+}
+
+.testimonial{
+  width:360px;
+  padding:27px;
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:20px;
+  background:rgba(255,255,255,.025);
+}
+
+.stars{
+  color:#a78bfa;
+  letter-spacing:3px;
+  margin-bottom:17px;
+  font-size:11px;
+}
+
+.testimonial p{
+  color:#9a93a4;
+  font-size:11px;
+  line-height:1.8;
+  margin-bottom:20px;
+}
+
+.client{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.avatar{
+  width:35px;
+  height:35px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  color:#c4b5fd;
+  background:linear-gradient(135deg,#31205c,#701a75);
+  font:800 11px Manrope;
+}
+
+.client strong{
+  display:block;
+  font-size:10px;
+}
+
+.client small{
+  color:#625c6d;
+  font-size:8px;
+}
+
+@keyframes testimonialScroll{
+  to{transform:translateX(-50%)}
+}
+
+/* =====================================
+   CTA
+===================================== */
+
+.cta{
+  padding:80px 0 120px;
+}
+
+.cta-box{
+  position:relative;
+  overflow:hidden;
+  padding:100px 30px;
+  text-align:center;
+  border-radius:31px;
+  border:1px solid rgba(255,255,255,.11);
+  background:
+    radial-gradient(circle at 50% 120%,rgba(217,70,239,.4),transparent 40%),
+    radial-gradient(circle at 10% 0%,rgba(124,58,237,.35),transparent 35%),
+    linear-gradient(135deg,#170c29,#0c0714);
+}
+
+.cta-box:before{
+  content:"";
+  position:absolute;
+  inset:-100%;
+  background:conic-gradient(
+    transparent,
+    rgba(167,139,250,.2),
+    transparent 25%
+  );
+  animation:ctaSpin 8s linear infinite;
+}
+
+@keyframes ctaSpin{
+  to{transform:rotate(360deg)}
+}
+
+.cta-content{
+  position:relative;
+  z-index:2;
+}
+
+.cta-box h2{
+  font:800 clamp(38px,5vw,62px)/1.04 Manrope;
+  letter-spacing:-3px;
+  margin-bottom:17px;
+}
+
+.cta-box p{
+  max-width:560px;
+  margin:0 auto 29px;
+  color:#aaa3b4;
+  font-size:12px;
+  line-height:1.8;
+}
+
+/* =====================================
+   CONTACT
+===================================== */
+
+.contact{
+  background:#08060e;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:70px;
+}
+
+.contact-copy h2{
+  font:800 48px/1.07 Manrope;
+  letter-spacing:-2.5px;
+  margin-bottom:18px;
+}
+
+.contact-copy>p{
+  color:#898292;
+  font-size:12px;
+  line-height:1.85;
+  margin-bottom:26px;
+}
+
+.contact-info{
+  display:grid;
+  gap:11px;
+}
+
+.contact-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:13px;
+  border-radius:13px;
+  border:1px solid rgba(255,255,255,.07);
+  background:rgba(255,255,255,.025);
+  transition:.3s;
+}
+
+.contact-item:hover{
+  transform:translateX(6px);
+  border-color:rgba(139,92,246,.25);
+}
+
+.contact-icon{
+  width:39px;
+  height:39px;
+  display:grid;
+  place-items:center;
+  border-radius:10px;
+  background:rgba(139,92,246,.1);
+}
+
+.contact-item small{
+  display:block;
+  color:#696373;
+  font-size:8px;
+  margin-bottom:2px;
+}
+
+.contact-item span{
+  font-size:10px;
+}
+
+.form{
+  padding:28px;
+  border-radius:21px;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.025);
+}
+
+.row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:13px;
+}
+
+.field{
+  margin-bottom:15px;
+}
+
+.field label{
+  display:block;
+  color:#aaa4b5;
+  font-size:8px;
+  font-weight:800;
+  margin-bottom:7px;
+}
+
+.field input,
+.field textarea,
+.field select{
+  width:100%;
+  padding:13px;
+  color:white;
+  outline:none;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:9px;
+  background:rgba(0,0,0,.22);
+  font-size:10px;
+  transition:.3s;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus{
+  border-color:#8b5cf6;
+  box-shadow:0 0 0 3px rgba(139,92,246,.08);
+}
+
+.field input::placeholder,
+.field textarea::placeholder{
+  color:#56505f;
+}
+
+.field textarea{
+  min-height:120px;
+  resize:vertical;
+}
+
+.field select option{
+  background:#100a18;
+}
+
+.submit{
+  width:100%;
+  border:0;
+  cursor:pointer;
+}
+
+/* =====================================
+   STICKY CTA
+===================================== */
+
+.sticky-cta{
+  position:fixed;
+  z-index:4500;
+  left:50%;
+  bottom:18px;
+  width:min(600px,90%);
+  padding:9px 10px 9px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  transform:translate(-50%,130%);
+  border:1px solid rgba(255,255,255,.11);
+  border-radius:15px;
+  background:rgba(10,6,17,.82);
+  backdrop-filter:blur(20px);
+  box-shadow:0 20px 60px rgba(0,0,0,.5);
+  transition:.5s cubic-bezier(.2,.8,.2,1);
+}
+
+.sticky-cta.show{
+  transform:translate(-50%,0);
+}
+
+.sticky-cta span{
+  color:#aaa4b5;
+  font-size:10px;
+}
+
+.sticky-cta b{
+  color:white;
+}
+
+.sticky-cta a{
+  padding:10px 15px;
+  border-radius:9px;
+  background:linear-gradient(135deg,#7c3aed,#c026d3);
+  font-size:9px;
+  font-weight:800;
+  white-space:nowrap;
+}
+
+/* =====================================
+   WHATSAPP
+===================================== */
+
+.whatsapp-wrap{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:4600;
+}
+
+.whatsapp{
+  width:58px;
+  height:58px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:#25d366;
+  font-size:24px;
+  box-shadow:0 12px 45px rgba(37,211,102,.3);
+  animation:whatsapp 2.5s infinite;
+  transition:.35s;
+}
+
+.whatsapp:hover{
+  transform:scale(1.1) rotate(8deg);
+}
+
+.whatsapp-bubble{
+  position:absolute;
+  right:0;
+  bottom:70px;
+  width:210px;
+  padding:13px;
+  border-radius:13px;
+  border:1px solid rgba(255,255,255,.1);
+  background:rgba(10,7,15,.92);
+  backdrop-filter:blur(18px);
+  box-shadow:0 20px 50px rgba(0,0,0,.4);
+  opacity:0;
+  transform:translateY(10px) scale(.95);
+  pointer-events:none;
+  transition:.4s;
+}
+
+.whatsapp-wrap:hover .whatsapp-bubble{
+  opacity:1;
+  transform:none;
+}
+
+.whatsapp-bubble strong{
+  display:block;
+  font-size:10px;
+  margin-bottom:3px;
+}
+
+.whatsapp-bubble p{
+  color:#777080;
+  font-size:8px;
+  line-height:1.6;
+}
+
+@keyframes whatsapp{
+  0%,100%{
+    box-shadow:0 12px 40px rgba(37,211,102,.25);
+  }
+  50%{
+    box-shadow:
+      0 12px 55px rgba(37,211,102,.55),
+      0 0 0 10px rgba(37,211,102,.04);
+  }
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer{
+  padding:55px 0 25px;
+  border-top:1px solid rgba(255,255,255,.06);
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr 1fr;
+  gap:40px;
+  padding-bottom:40px;
+}
+
+.footer-logo{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  margin-bottom:13px;
+  font:800 21px Manrope;
+}
+
+.footer p{
+  max-width:300px;
+  color:#676171;
+  font-size:9px;
+  line-height:1.8;
+}
+
+.footer h4{
+  font-size:9px;
+  margin-bottom:15px;
+}
+
+.footer ul{
+  list-style:none;
+}
+
+.footer li{
+  margin-bottom:9px;
+}
+
+.footer li a{
+  color:#6b6575;
+  font-size:9px;
+  transition:.3s;
+}
+
+.footer li a:hover{
+  color:white;
+}
+
+.copyright{
+  padding-top:22px;
+  border-top:1px solid rgba(255,255,255,.06);
+  color:#514c59;
+  text-align:center;
+  font-size:8px;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media(max-width:1000px){
+
+  .nav-links{
+    position:absolute;
+    left:0;
+    right:0;
+    top:72px;
+    display:none;
+    flex-direction:column;
+    align-items:stretch;
+    padding:22px;
+    gap:19px;
+    border-radius:16px;
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(8,5,14,.97);
+  }
+
+  .nav-links.active{
+    display:flex;
+  }
+
+  .nav-cta{
+    text-align:center;
+    display:block;
+  }
+
+  .menu{
+    display:block;
+  }
+
+  .hero-grid,
+  .about-grid,
+  .case-grid,
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .services-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .score-grid{
+    grid-template-columns:1fr;
+  }
+
+  .visual{
+    min-height:470px;
+  }
+
+  .case-visual{
+    order:2;
+  }
+
+  .case-content{
+    order:1;
+  }
+
+  .footer-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:650px){
+
+  .container{
+    width:90%;
+  }
+
+  section{
+    padding:85px 0;
+  }
+
+  .hero{
+    padding-top:145px;
+  }
+
+  .hero h1{
+    font-size:47px;
+    letter-spacing:-2.8px;
+  }
+
+  .hero-text{
+    font-size:12px;
+  }
+
+  .visual{
+    min-height:410px;
+  }
+
+  .dashboard{
+    width:100%;
+    max-width:390px;
+    padding:17px;
+  }
+
+  .dashboard-ring{
+    width:330px;
+    height:330px;
+  }
+
+  .floating{
+    transform:scale(.75);
+  }
+
+  .float1{
+    left:-20px;
+  }
+
+  .float2{
+    right:-20px;
+  }
+
+  .float3{
+    display:none;
+  }
+
+  .trust-inner{
+    gap:20px;
+  }
+
+  .trust-label{
+    width:100%;
+    text-align:center;
+  }
+
+  .services-grid,
+  .process-grid,
+  .compare-wrap{
+    grid-template-columns:1fr;
+  }
+
+  .stats-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:30px 5px;
+  }
+
+  .stat:after{
+    display:none;
+  }
+
+  .counter{
+    font-size:36px;
+  }
+
+  .about-art{
+    min-height:370px;
+  }
+
+  .about-center{
+    width:145px;
+    height:145px;
+  }
+
+  .about-center strong{
+    font-size:32px;
+  }
+
+  .case-visual{
+    min-height:350px;
+    padding:18px;
+  }
+
+  .case-chart{
+    height:230px;
+  }
+
+  .row{
+    grid-template-columns:1fr;
+  }
+
+  .contact-copy h2{
+    font-size:39px;
+  }
+
+  .testimonial{
+    width:300px;
+  }
+
+  .sticky-cta{
+    width:92%;
+  }
+
+  .sticky-cta span{
+    font-size:8px;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+    gap:30px 18px;
+  }
+
+  .whatsapp-wrap{
+    right:15px;
+    bottom:15px;
+  }
+
+  .whatsapp{
+    width:54px;
+    height:54px;
+  }
+
+}
+</style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
+<!-- LOADER -->
 
-  <nav>
+<div class="loader" id="loader">
 
-    <div class="container nav-inner">
+  <div class="loader-inner">
 
-      <a href="#home" class="logo">
+    <div class="loader-logo">A</div>
 
-        <div class="logo-icon">
-          R
-        </div>
-
-        RAKIB
-
-      </a>
-
-      <div class="nav-links" id="navLinks">
-
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
-        <a href="#process">Process</a>
-
-        <a class="nav-cta" href="#contact">
-          Let's Talk ↗
-        </a>
-
-      </div>
-
-      <button class="menu" id="menu">
-        ☰
-      </button>
-
-    </div>
-
-  </nav>
-
-
-  <!-- HERO -->
-
-  <section class="hero" id="home">
-
-    <div class="container hero-grid">
-
-      <div class="reveal">
-
-        <div class="badge">
-
-          <span class="status-dot"></span>
-
-          E-commerce Expert
-
-        </div>
-
-        <h1>
-
-          Build.
-          <span class="gradient">Optimize.</span>
-          Scale.
-
-        </h1>
-
-        <p class="hero-text">
-
-          I help ambitious businesses build high-converting
-          e-commerce stores, attract more customers and scale
-          profitable online businesses.
-
-        </p>
-
-        <div class="buttons">
-
-          <a
-            class="btn primary"
-            href="https://wa.me/8801772572380?text=Hello%20Rakib,%20I%20want%20to%20discuss%20my%20e-commerce%20business."
-            target="_blank"
-          >
-            Start a Conversation →
-          </a>
-
-          <a
-            class="btn secondary"
-            href="#work"
-          >
-            View My Work
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <!-- DASHBOARD -->
-
-      <div class="visual reveal">
-
-        <div class="dashboard">
-
-          <div class="dash-head">
-
-            <div>
-
-              <div class="dash-title">
-                Store Performance
-              </div>
-
-              <small style="color:#7e88a5">
-                Last 30 days
-              </small>
-
-            </div>
-
-            <div class="growth">
-              ↑ Growing
-            </div>
-
-          </div>
-
-          <div class="chart">
-
-            <div class="grid"></div>
-
-            <svg viewBox="0 0 500 200" preserveAspectRatio="none">
-
-              <defs>
-
-                <linearGradient
-                  id="chartGradient"
-                  x1="0"
-                  x2="1"
-                >
-
-                  <stop
-                    offset="0%"
-                    stop-color="#35d8ff"
-                  />
-
-                  <stop
-                    offset="100%"
-                    stop-color="#9c6cff"
-                  />
-
-                </linearGradient>
-
-              </defs>
-
-              <path
-                d="M0 170
-                C40 165 55 145 80 150
-                S120 125 145 135
-                S180 110 205 120
-                S245 90 270 100
-                S310 85 335 65
-                S370 75 395 50
-                S440 55 470 30
-                S490 30 500 15"
-                fill="none"
-                stroke="url(#chartGradient)"
-                stroke-width="5"
-                stroke-linecap="round"
-              />
-
-            </svg>
-
-          </div>
-
-
-          <div class="metrics">
-
-            <div class="metric">
-
-              <small>Revenue</small>
-
-              <strong>
-                $84.2K
-              </strong>
-
-            </div>
-
-            <div class="metric">
-
-              <small>Orders</small>
-
-              <strong>
-                1,284
-              </strong>
-
-            </div>
-
-            <div class="metric">
-
-              <small>ROAS</small>
-
-              <strong>
-                4.8x
-              </strong>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div class="floating sales">
-
-          <small>
-            Monthly Sales
-          </small>
-
-          <strong>
-            $28,490
-          </strong>
-
-          <span class="up">
-            ↑ 32.8% this month
-          </span>
-
-        </div>
-
-
-        <div class="floating conversion">
-
-          <small>
-            Conversion Rate
-          </small>
-
-          <strong>
-            6.84%
-          </strong>
-
-          <span class="up">
-            +1.24%
-          </span>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- STATS -->
-
-  <div class="stats">
-
-    <div class="container stats-grid">
-
-      <div class="stat">
-
-        <strong data-target="50">
-          0+
-        </strong>
-
-        <p>
-          Projects Supported
-        </p>
-
-      </div>
-
-      <div class="stat">
-
-        <strong data-target="12">
-          0+
-        </strong>
-
-        <p>
-          Markets Reached
-        </p>
-
-      </div>
-
-      <div class="stat">
-
-        <strong data-target="4">
-          0.0x
-        </strong>
-
-        <p>
-          Average ROAS Goal
-        </p>
-
-      </div>
-
-      <div class="stat">
-
-        <strong>
-          24/7
-        </strong>
-
-        <p>
-          Growth Mindset
-        </p>
-
-      </div>
-
+    <div class="loader-bar">
+      <span></span>
     </div>
 
   </div>
 
+</div>
 
-  <!-- SERVICES -->
 
-  <section id="services">
+<!-- CURSOR -->
 
-    <div class="container">
+<div class="cursor" id="cursor"></div>
 
-      <div class="heading reveal">
 
-        <div class="label">
-          What I Do
-        </div>
+<!-- BACKGROUND -->
 
-        <h2>
-          Everything you need to grow online.
-        </h2>
+<div class="aurora a"></div>
+<div class="aurora b"></div>
+<div class="aurora c"></div>
 
-        <p>
-          From launching your first store to scaling an
-          established brand, I focus on the areas that
-          actually move your business forward.
-        </p>
 
-      </div>
+<!-- HEADER -->
 
+<header id="header">
 
-      <div class="services">
+<div class="container">
 
-        <div class="service reveal">
+<nav>
 
-          <div class="icon">
-            🛒
-          </div>
+<a href="#home" class="logo">
 
-          <h3>
-            E-commerce Strategy
-          </h3>
+  <div class="logo-mark">
+    <span>A</span>
+  </div>
 
-          <p>
-            Build a clear roadmap around your products,
-            customers, pricing, positioning and growth.
-          </p>
+  Anamika<span>.</span>
 
-        </div>
+</a>
 
 
-        <div class="service reveal">
+<ul class="nav-links" id="navLinks">
 
-          <div class="icon">
-            🌐
-          </div>
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#results">Results</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
 
-          <h3>
-            Store Development
-          </h3>
+<li>
+<a
+href="https://wa.me/8801792499281"
+target="_blank"
+class="nav-cta">
+Let's Talk →
+</a>
+</li>
 
-          <p>
-            High-converting online stores designed for
-            speed, trust and better customer experience.
-          </p>
+</ul>
 
-        </div>
 
+<div class="menu" id="menu">☰</div>
 
-        <div class="service reveal">
+</nav>
 
-          <div class="icon">
-            📈
-          </div>
+</div>
 
-          <h3>
-            Growth Marketing
-          </h3>
+</header>
 
-          <p>
-            Performance-focused marketing designed to
-            attract qualified traffic and customers.
-          </p>
 
-        </div>
+<!-- HERO -->
 
+<section class="hero" id="home">
 
-        <div class="service reveal">
+<div class="particles" id="particles"></div>
 
-          <div class="icon">
-            🔎
-          </div>
+<div class="container">
 
-          <h3>
-            SEO & Visibility
-          </h3>
+<div class="hero-grid">
 
-          <p>
-            Improve organic visibility and sustainable
-            search traffic for your products and brand.
-          </p>
 
-        </div>
+<div class="reveal">
 
+<div class="eyebrow">
 
-        <div class="service reveal">
+<span class="dot"></span>
 
-          <div class="icon">
-            📦
-          </div>
+E-Commerce Growth Partner
 
-          <h3>
-            Marketplace Management
-          </h3>
+</div>
 
-          <p>
-            Product listing, optimization and growth
-            support across leading marketplaces.
-          </p>
 
-        </div>
+<h1>
 
+We Make
 
-        <div class="service reveal">
+<span class="gradient">
+E-Commerce
+</span>
 
-          <div class="icon">
-            📊
-          </div>
+Brands Grow.
 
-          <h3>
-            Analytics & Optimization
-          </h3>
+</h1>
 
-          <p>
-            Turn your store data into actionable decisions
-            through conversion tracking and optimization.
-          </p>
 
-        </div>
+<p class="hero-text">
 
-      </div>
+From Amazon PPC and listing optimization to Shopify,
+SEO and marketplace management — Anamika helps
+ambitious brands build visibility, conversions and
+sustainable growth.
 
-    </div>
+</p>
 
-  </section>
 
+<div class="buttons">
 
-  <!-- ABOUT -->
+<a
+class="btn btn-main"
+href="https://wa.me/8801792499281?text=Hello%20Anamika%2C%20I%20want%20to%20grow%20my%20e-commerce%20business."
+target="_blank">
 
-  <section id="about">
+Start a Conversation →
 
-    <div class="container about-grid">
+</a>
 
-      <div class="about-image reveal">
+<a
+class="btn btn-outline"
+href="#services">
 
-        <div class="orbit orbit1"></div>
-        <div class="orbit orbit2"></div>
+Explore Services
 
-        <div class="big-logo">
-          R
-        </div>
+</a>
 
-      </div>
+</div>
 
+</div>
 
-      <div class="about-text reveal">
 
-        <div class="label">
-          About Rakib
-        </div>
+<!-- DASHBOARD -->
 
-        <h2>
-          More than a beautiful online store.
-        </h2>
+<div class="visual reveal">
 
-        <p>
-          I work with businesses that want to build
-          e-commerce systems that actually generate
-          measurable business results.
-        </p>
+<div class="dashboard-ring"></div>
 
-        <p>
-          My approach combines strategy, store optimization,
-          marketing and data to identify what is holding
-          your business back and what can take it forward.
-        </p>
 
+<div class="floating float1">
 
-        <div class="checks">
+<small>Monthly Growth</small>
 
-          <div class="check">
-            <span>✓</span>
-            Growth-focused strategy
-          </div>
+<strong class="green">
++<span class="dash-count" data-target="40">0</span>%
+</strong>
 
-          <div class="check">
-            <span>✓</span>
-            Conversion optimization
-          </div>
+</div>
 
-          <div class="check">
-            <span>✓</span>
-            Data-driven decisions
-          </div>
 
-          <div class="check">
-            <span>✓</span>
-            Long-term partnerships
-          </div>
+<div class="floating float2">
 
-        </div>
+<small>Advertising ROAS</small>
 
-      </div>
+<strong style="color:#c4b5fd">
+<span id="roas">0.00</span>x ↑
+</strong>
 
-    </div>
+</div>
 
-  </section>
 
+<div class="floating float3">
 
-  <!-- PROCESS -->
+<small>Revenue</small>
 
-  <section id="process">
+<strong>
+$<span class="dash-count" data-target="500">0</span>K
+</strong>
 
-    <div class="container">
+</div>
 
-      <div class="heading reveal">
 
-        <div class="label">
-          My Process
-        </div>
+<div class="dashboard" id="dashboard">
 
-        <h2>
-          A simple process. Serious results.
-        </h2>
+<div class="dash-head">
 
-        <p>
-          No unnecessary complexity. Every project follows
-          a clear path from strategy to growth.
-        </p>
+<div class="dash-title">
+Growth Dashboard
+</div>
 
-      </div>
+<div class="live">
+● LIVE
+</div>
 
+</div>
 
-      <div class="process">
 
-        <div class="step reveal">
+<div class="chart">
 
-          <div class="step-number">
-            01 — DISCOVER
-          </div>
+<svg viewBox="0 0 500 185" preserveAspectRatio="none">
 
-          <h3>
-            Understand
-          </h3>
+<defs>
 
-          <p>
-            Learn about your business, products,
-            customers and current challenges.
-          </p>
+<linearGradient
+id="chartFill"
+x1="0"
+y1="0"
+x2="0"
+y2="1">
 
-        </div>
+<stop
+offset="0%"
+stop-color="#8b5cf6"
+stop-opacity=".42"/>
 
+<stop
+offset="100%"
+stop-color="#8b5cf6"
+stop-opacity="0"/>
 
-        <div class="step reveal">
+</linearGradient>
 
-          <div class="step-number">
-            02 — STRATEGY
-          </div>
+</defs>
 
-          <h3>
-            Plan
-          </h3>
 
-          <p>
-            Identify opportunities and create a
-            practical growth roadmap.
-          </p>
+<path
+d="
+M0 160
+C45 155 60 145 100 149
+C140 155 165 108 205 125
+C245 141 260 78 300 98
+C340 116 365 52 402 67
+C438 82 468 39 500 15
+L500 185
+L0 185 Z"
+fill="url(#chartFill)"
+/>
 
-        </div>
 
+<path
+class="chart-line"
+d="
+M0 160
+C45 155 60 145 100 149
+C140 155 165 108 205 125
+C245 141 260 78 300 98
+C340 116 365 52 402 67
+C438 82 468 39 500 15"
+fill="none"
+stroke="#a78bfa"
+stroke-width="4"
+stroke-linecap="round"
+/>
 
-        <div class="step reveal">
+</svg>
 
-          <div class="step-number">
-            03 — EXECUTE
-          </div>
+</div>
 
-          <h3>
-            Build
-          </h3>
 
-          <p>
-            Implement the strategy across your store,
-            marketing and customer journey.
-          </p>
+<div class="dash-stats">
 
-        </div>
+<div class="dash-stat">
 
+<small>Revenue</small>
 
-        <div class="step reveal">
+<strong>
+$<span class="dash-count" data-target="500">0</span>K
+</strong>
 
-          <div class="step-number">
-            04 — OPTIMIZE
-          </div>
+</div>
 
-          <h3>
-            Scale
-          </h3>
 
-          <p>
-            Measure results, improve performance and
-            double down on what works.
-          </p>
+<div class="dash-stat">
 
-        </div>
+<small>ROAS</small>
 
-      </div>
+<strong>
+<span class="dash-roas">0.00</span>x
+</strong>
 
-    </div>
+</div>
 
-  </section>
 
+<div class="dash-stat">
 
-  <!-- WORK -->
+<small>Growth</small>
 
-  <section id="work">
+<strong class="green">
++<span class="dash-count" data-target="40">0</span>%
+</strong>
 
-    <div class="container">
+</div>
 
-      <div class="heading reveal">
+</div>
 
-        <div class="label">
-          Selected Work
-        </div>
+</div>
 
-        <h2>
-          Built for growth, not just aesthetics.
-        </h2>
+</div>
 
-        <p>
-          Example e-commerce projects demonstrating
-          strategy, design and growth optimization.
-        </p>
+</div>
 
-      </div>
+</div>
 
+</section>
 
-      <div class="work">
 
-        <div class="project reveal">
+<!-- TRUST / PLATFORMS -->
 
-          <div class="arrow">
-            ↗
-          </div>
+<div class="trust">
 
-          <div class="tag">
-            Fashion E-commerce
-          </div>
+<div class="container">
 
-          <h3>
-            Urban Fashion Store
-          </h3>
+<div class="trust-inner">
 
-          <p>
-            Store redesign, conversion optimization
-            and performance marketing strategy.
-          </p>
+<div class="trust-label">
+Built for modern commerce
+</div>
 
-        </div>
+<div class="platform">AMAZON</div>
+<div class="platform">SHOPIFY</div>
+<div class="platform">WALMART</div>
+<div class="platform">eBAY</div>
+<div class="platform">SEO</div>
+<div class="platform">PPC</div>
 
+</div>
 
-        <div class="project reveal">
+</div>
 
-          <div class="arrow">
-            ↗
-          </div>
+</div>
 
-          <div class="tag">
-            Beauty & Lifestyle
-          </div>
 
-          <h3>
-            Glow Marketplace
-          </h3>
+<!-- SERVICES -->
 
-          <p>
-            Product positioning, storefront optimization
-            and customer acquisition.
-          </p>
+<section class="services" id="services">
 
-        </div>
+<div class="container">
 
+<div class="section-heading reveal">
 
-        <div class="project reveal">
+<div class="label">
+What We Do
+</div>
 
-          <div class="arrow">
-            ↗
-          </div>
+<h2>
 
-          <div class="tag">
-            Consumer Brand
-          </div>
+Everything Your Brand Needs To
+<span class="gradient">Scale.</span>
 
-          <h3>
-            Nova Essentials
-          </h3>
+</h2>
 
-          <p>
-            E-commerce strategy and analytics-driven
-            growth optimization.
-          </p>
+<p>
 
-        </div>
+A complete e-commerce growth system built around
+research, optimization, performance and execution.
 
-      </div>
+</p>
 
-    </div>
+</div>
 
-  </section>
 
+<div class="services-grid">
 
-  <!-- TESTIMONIAL -->
 
-  <section>
+<div class="service reveal">
 
-    <div class="container">
+<div class="service-number">01</div>
 
-      <div class="testimonial reveal">
+<div class="icon">📈</div>
 
-        <div class="quote">
+<h3>Amazon PPC</h3>
 
-          “Rakib doesn't just focus on getting
-          more traffic. He focuses on building
-          a better business.”
+<p>
+Strategic advertising campaigns designed to increase
+sales while improving advertising efficiency.
+</p>
 
-        </div>
+<div class="service-arrow">↗</div>
 
-        <div class="client">
-          — Your Future Client
-        </div>
+</div>
 
-      </div>
 
-    </div>
+<div class="service reveal">
 
-  </section>
+<div class="service-number">02</div>
 
+<div class="icon">🛒</div>
 
-  <!-- FAQ -->
+<h3>Amazon Listing Optimization</h3>
 
-  <section>
+<p>
+Conversion-focused titles, bullets, keywords and
+content designed to turn visitors into buyers.
+</p>
 
-    <div class="container">
+<div class="service-arrow">↗</div>
 
-      <div class="heading reveal">
+</div>
 
-        <div class="label">
-          FAQ
-        </div>
 
-        <h2>
-          Questions, answered.
-        </h2>
+<div class="service reveal">
 
-      </div>
+<div class="service-number">03</div>
 
+<div class="icon">🔎</div>
 
-      <div class="faq">
+<h3>Product Research</h3>
 
-        <div class="faq-item">
+<p>
+Market, demand and competition research to uncover
+strong product opportunities.
+</p>
 
-          <button class="faq-question">
+<div class="service-arrow">↗</div>
 
-            What e-commerce platforms do you work with?
+</div>
 
-            <span class="plus">
-              +
-            </span>
 
-          </button>
+<div class="service reveal">
 
-          <div class="faq-answer">
+<div class="service-number">04</div>
 
-            <p>
-              I can help with Shopify and other major
-              e-commerce platforms depending on the
-              project's requirements.
-            </p>
+<div class="icon">🚀</div>
 
-          </div>
+<h3>SEO</h3>
 
-        </div>
+<p>
+Build sustainable organic visibility and attract
+qualified customers to your business.
+</p>
 
+<div class="service-arrow">↗</div>
 
-        <div class="faq-item">
+</div>
 
-          <button class="faq-question">
 
-            Can you help an existing online store?
+<div class="service reveal">
 
-            <span class="plus">
-              +
-            </span>
+<div class="service-number">05</div>
 
-          </button>
+<div class="icon">💻</div>
 
-          <div class="faq-answer">
+<h3>Shopify</h3>
 
-            <p>
-              Yes. I can audit your existing store,
-              identify problems and create an optimization
-              roadmap.
-            </p>
+<p>
+Modern, conversion-focused Shopify stores designed
+for serious e-commerce brands.
+</p>
 
-          </div>
+<div class="service-arrow">↗</div>
 
-        </div>
+</div>
 
 
-        <div class="faq-item">
+<div class="service reveal">
 
-          <button class="faq-question">
+<div class="service-number">06</div>
 
-            Do you work with international clients?
+<div class="icon">🌎</div>
 
-            <span class="plus">
-              +
-            </span>
+<h3>Walmart / eBay</h3>
 
-          </button>
+<p>
+Marketplace management and optimization across
+Walmart and eBay.
+</p>
 
-          <div class="faq-answer">
+<div class="service-arrow">↗</div>
 
-            <p>
-              Yes. E-commerce businesses can be supported
-              remotely regardless of location.
-            </p>
+</div>
 
-          </div>
 
-        </div>
+<div class="service reveal">
 
+<div class="service-number">07</div>
 
-        <div class="faq-item">
+<div class="icon">⌨️</div>
 
-          <button class="faq-question">
+<h3>Data Entry</h3>
 
-            How do I get started?
+<p>
+Accurate catalog management, product data and
+reliable marketplace support.
+</p>
 
-            <span class="plus">
-              +
-            </span>
+<div class="service-arrow">↗</div>
 
-          </button>
+</div>
 
-          <div class="faq-answer">
 
-            <p>
-              Send me a message through WhatsApp or email
-              and tell me about your business and goals.
-            </p>
+<div class="service reveal">
 
-          </div>
+<div class="service-number">08</div>
 
-        </div>
+<div class="icon">💬</div>
 
-      </div>
+<h3>Customer Support</h3>
 
-    </div>
+<p>
+Professional support that improves customer
+experience, trust and retention.
+</p>
 
-  </section>
+<div class="service-arrow">↗</div>
 
+</div>
 
-  <!-- CONTACT -->
 
-  <section id="contact">
+</div>
 
-    <div class="container">
+</div>
 
-      <div class="contact reveal">
+</section>
 
-        <div>
 
-          <div class="label">
-            Let's Work Together
-          </div>
+<!-- LIVE STATS -->
 
-          <h2>
-            Ready to grow your e-commerce business?
-          </h2>
+<section class="stats">
 
-          <p class="contact-description">
-            Tell me about your business, your current
-            challenges and where you want to go.
-            Let's explore how we can get there.
-          </p>
+<div class="container">
 
+<div class="stats-grid">
 
-          <div class="contact-info">
 
-            <div class="contact-item">
+<div class="stat reveal">
 
-              <small>
-                Email
-              </small>
+<div class="counter">
+$<span data-count="500">0</span>K<span>+</span>
+</div>
 
-              <a href="mailto:rakibhasnmun188@gmail.com">
-                rakibhasnmun188@gmail.com
-              </a>
+<p>Revenue Managed</p>
 
-            </div>
+</div>
 
 
-            <div class="contact-item">
+<div class="stat reveal">
 
-              <small>
-                WhatsApp
-              </small>
+<div class="counter">
+<span data-count="5.5">0</span>x
+</div>
 
-              <a
-                href="https://wa.me/8801772572380"
-                target="_blank"
-              >
-                +880 1772-572380
-              </a>
+<p>Target ROAS</p>
 
-            </div>
+</div>
 
-          </div>
 
-        </div>
+<div class="stat reveal">
 
+<div class="counter">
+<span data-count="40">0</span><span>%</span>
+</div>
 
-        <!-- FORM -->
+<p>Growth Potential</p>
 
-        <form
-          class="contact-form"
-          id="contactForm"
-        >
+</div>
 
-          <input
-            type="text"
-            id="name"
-            placeholder="Your Name"
-            required
-          >
 
-          <input
-            type="email"
-            id="email"
-            placeholder="Your Email"
-            required
-          >
+<div class="stat reveal">
 
-          <input
-            type="text"
-            id="business"
-            placeholder="Business / Website"
-          >
+<div class="counter">
+<span data-count="8">0</span><span>+</span>
+</div>
 
-          <textarea
-            id="message"
-            placeholder="Tell me about your project..."
-            required
-          ></textarea>
+<p>Core Services</p>
 
-          <button
-            type="submit"
-            class="btn primary"
-          >
-            Send Message →
-          </button>
+</div>
 
-        </form>
 
-      </div>
+</div>
 
-    </div>
+</div>
 
-  </section>
+</section>
 
 
-  <!-- FOOTER -->
+<!-- BEFORE / AFTER -->
 
-  <footer>
+<section class="comparison" id="results">
 
-    <div class="container">
+<div class="container">
 
-      <div class="footer-top">
+<div class="section-heading reveal">
 
-        <div>
+<div class="label">
+Performance Snapshot
+</div>
 
-          <a href="#home" class="logo">
+<h2>
 
-            <div class="logo-icon">
-              R
-            </div>
+From Stagnant To
+<span class="gradient">Scalable.</span>
 
-            RAKIB
+</h2>
 
-          </a>
+<p>
+Illustrative example of how optimization can transform
+key e-commerce performance metrics.
+</p>
 
-          <p class="footer-description">
+</div>
 
-            E-commerce strategy, growth and optimization
-            for ambitious businesses.
 
-          </p>
+<div class="compare-wrap">
 
-        </div>
 
+<div class="compare-card reveal">
 
-        <div class="footer-links">
+<div class="compare-title">
 
-          <div class="footer-column">
+<h3>Before Optimization</h3>
 
-            <h4>
-              Explore
-            </h4>
+<span class="badge">BASELINE</span>
 
-            <a href="#services">
-              Services
-            </a>
+</div>
 
-            <a href="#about">
-              About
-            </a>
 
-            <a href="#work">
-              Work
-            </a>
+<div class="metric">
 
-            <a href="#contact">
-              Contact
-            </a>
+<div class="metric-top">
 
-          </div>
+<span>Revenue</span>
 
+<strong class="metric-value">$180K</strong>
 
-          <div class="footer-column">
+</div>
 
-            <h4>
-              Connect
-            </h4>
+<div class="progress">
+<span style="--width:36%"></span>
+</div>
 
-            <a
-              href="https://wa.me/8801772572380"
-              target="_blank"
-            >
-              WhatsApp
-            </a>
+</div>
 
-            <a
-              href="mailto:rakibhasnmun188@gmail.com"
-            >
-              Email
-            </a>
 
-          </div>
+<div class="metric">
 
-        </div>
+<div class="metric-top">
 
-      </div>
+<span>ROAS</span>
 
+<strong class="metric-value">2.10x</strong>
 
-      <div class="copyright">
+</div>
 
-        <span>
-          © 2026 Rakib. All rights reserved.
-        </span>
+<div class="progress">
+<span style="--width:38%"></span>
+</div>
 
-        <span>
-          E-commerce Expert
-        </span>
+</div>
 
-      </div>
 
-    </div>
+<div class="metric">
 
-  </footer>
+<div class="metric-top">
 
+<span>Growth</span>
 
-  <!-- WHATSAPP -->
+<strong class="metric-value">+8%</strong>
 
-  <a
-    class="whatsapp"
-    href="https://wa.me/8801772572380?text=Hello%20Rakib,%20I%20want%20to%20discuss%20my%20e-commerce%20business."
-    target="_blank"
-    aria-label="Chat on WhatsApp"
-  >
-    ☎
-  </a>
+</div>
 
+<div class="progress">
+<span style="--width:20%"></span>
+</div>
 
-  <script>
+</div>
 
-    /* MOBILE MENU */
+</div>
 
-    const menu =
-      document.getElementById("menu");
 
-    const navLinks =
-      document.getElementById("navLinks");
+<div class="compare-card after reveal">
 
-    menu.addEventListener("click", () => {
+<div class="compare-title">
 
-      navLinks.classList.toggle("active");
+<h3>Growth Target</h3>
 
-    });
+<span class="badge">TARGET</span>
 
+</div>
 
-    document
-      .querySelectorAll(".nav-links a")
-      .forEach(link => {
 
-        link.addEventListener("click", () => {
+<div class="metric">
 
-          navLinks.classList.remove("active");
+<div class="metric-top">
 
-        });
+<span>Revenue</span>
 
-      });
+<strong class="metric-value">$500K</strong>
 
+</div>
 
-    /* SCROLL REVEAL */
+<div class="progress">
+<span style="--width:92%"></span>
+</div>
 
-    const observer =
-      new IntersectionObserver(
-        entries => {
+</div>
 
-          entries.forEach(entry => {
 
-            if(entry.isIntersecting){
+<div class="metric">
 
-              entry.target.classList.add("show");
+<div class="metric-top">
 
-            }
+<span>ROAS</span>
 
-          });
+<strong class="metric-value">5.50x</strong>
 
-        },
-        {
-          threshold:.12
-        }
-      );
+</div>
 
+<div class="progress">
+<span style="--width:90%"></span>
+</div>
 
-    document
-      .querySelectorAll(".reveal")
-      .forEach(el => {
+</div>
 
-        observer.observe(el);
 
-      });
+<div class="metric">
 
+<div class="metric-top">
 
-    /* COUNTERS */
+<span>Growth</span>
 
-    const counters =
-      document.querySelectorAll("[data-target]");
+<strong class="metric-value">+40%</strong>
 
-    let countersStarted = false;
+</div>
 
+<div class="progress">
+<span style="--width:82%"></span>
+</div>
 
-    function startCounters(){
+</div>
 
-      if(countersStarted) return;
+</div>
 
-      countersStarted = true;
 
-      counters.forEach(counter => {
+</div>
 
-        const target =
-          Number(counter.dataset.target);
+</div>
 
-        let current = 0;
+</section>
 
-        const increment =
-          target / 50;
 
-        const timer =
-          setInterval(() => {
+<!-- CASE STUDY -->
 
-            current += increment;
+<section class="case-study">
 
-            if(current >= target){
+<div class="container">
 
-              current = target;
+<div class="case-grid">
 
-              clearInterval(timer);
 
-            }
+<div class="case-visual reveal">
 
-            if(target === 4){
+<div class="label">
+Illustrative Growth Dashboard
+</div>
 
-              counter.textContent =
-                current.toFixed(1) + "x";
+<div class="case-chart">
 
-            }else{
+<svg viewBox="0 0 700 300" preserveAspectRatio="none">
 
-              counter.textContent =
-                Math.floor(current) + "+";
+<defs>
 
-            }
+<linearGradient id="caseFill" x1="0" y1="0" x2="0" y2="1">
 
-          },25);
+<stop offset="0%" stop-color="#a78bfa" stop-opacity=".3"/>
 
-      });
+<stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
 
-    }
+</linearGradient>
 
+</defs>
 
-    const stats =
-      document.querySelector(".stats");
 
+<path
+d="
+M0 250
+C70 245 90 220 145 230
+C205 240 220 190 280 202
+C335 215 360 155 420 170
+C470 185 505 115 550 130
+C605 145 640 75 700 45
+L700 300
+L0 300 Z"
+fill="url(#caseFill)"
+/>
 
-    const statsObserver =
-      new IntersectionObserver(
-        entries => {
 
-          if(entries[0].isIntersecting){
+<path
+class="case-line"
+d="
+M0 250
+C70 245 90 220 145 230
+C205 240 220 190 280 202
+C335 215 360 155 420 170
+C470 185 505 115 550 130
+C605 145 640 75 700 45"
+fill="none"
+stroke="#a78bfa"
+stroke-width="5"
+stroke-linecap="round"
+/>
 
-            startCounters();
+</svg>
 
-          }
+</div>
 
-        },
-        {
-          threshold:.4
-        }
-      );
+</div>
 
 
-    statsObserver.observe(stats);
+<div class="case-content reveal">
 
+<div class="label">
+Growth Framework
+</div>
 
-    /* FAQ */
+<h2>
 
-    document
-      .querySelectorAll(".faq-question")
-      .forEach(button => {
+Optimize.
+Analyze.
+<span class="gradient">Scale.</span>
 
-        button.addEventListener("click", () => {
+</h2>
 
-          const item =
-            button.parentElement;
+<p>
 
-          document
-            .querySelectorAll(".faq-item")
-            .forEach(other => {
+Every growth opportunity starts with data. We focus on
+the details that influence visibility, conversion,
+advertising efficiency and long-term performance.
 
-              if(other !== item){
+</p>
 
-                other.classList.remove("active");
 
-              }
+<ul class="case-list">
 
-            });
+<li>
+<span class="check">✓</span>
+Research before execution
+</li>
 
-          item.classList.toggle("active");
+<li>
+<span class="check">✓</span>
+Continuous campaign optimization
+</li>
 
-        });
+<li>
+<span class="check">✓</span>
+Conversion-focused listings
+</li>
 
-      });
+<li>
+<span class="check">✓</span>
+Performance monitoring
+</li>
 
+<li>
+<span class="check">✓</span>
+Long-term scaling strategy
+</li>
 
-    /* CONTACT FORM */
+</ul>
 
-    document
-      .getElementById("contactForm")
-      .addEventListener("submit", function(e){
+</div>
 
-        e.preventDefault();
+</div>
 
-        const name =
-          document.getElementById("name").value;
+</div>
 
-        const email =
-          document.getElementById("email").value;
+</section>
 
-        const business =
-          document.getElementById("business").value;
 
-        const message =
-          document.getElementById("message").value;
+<!-- ABOUT -->
 
+<section class="about" id="about">
 
-        const whatsappMessage =
-          `Hello Rakib!
+<div class="container">
+
+<div class="about-grid">
+
+
+<div class="about-art reveal">
+
+<div class="about-box">
+
+<div class="grid-lines"></div>
+
+<div class="orbit"></div>
+
+
+<div class="about-center">
+
+<div>
+
+<strong>360°</strong>
+
+<span>
+E-COMMERCE GROWTH
+</span>
+
+</div>
+
+</div>
+
+
+<div class="mini m1">
+📊 Data Driven
+</div>
+
+<div class="mini m2">
+⚡ Fast Execution
+</div>
+
+<div class="mini m3">
+🎯 Goal Focused
+</div>
+
+<div class="mini m4">
+💜 Client First
+</div>
+
+</div>
+
+</div>
+
+
+<div class="about-copy reveal">
+
+<div class="label">
+Why Anamika
+</div>
+
+<h2>
+
+We Don't Just Manage Stores.
+
+<span class="gradient">
+We Build Growth.
+</span>
+
+</h2>
+
+<p>
+
+Your business deserves more than generic strategies.
+We combine marketplace expertise, research and
+continuous optimization to create a growth system
+around your brand.
+
+</p>
+
+
+<ul class="checks">
+
+<li>
+<span class="check">✓</span>
+Data-driven decision making
+</li>
+
+<li>
+<span class="check">✓</span>
+Customized growth strategies
+</li>
+
+<li>
+<span class="check">✓</span>
+Transparent communication
+</li>
+
+<li>
+<span class="check">✓</span>
+Performance-focused execution
+</li>
+
+<li>
+<span class="check">✓</span>
+Long-term growth mindset
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- WHY ANAMIKA SCORECARD -->
+
+<section class="score-section">
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+<div class="label">
+Why Choose Us
+</div>
+
+<h2>
+
+Built Around
+<span class="gradient">Performance.</span>
+
+</h2>
+
+<p>
+A practical combination of strategy, execution,
+communication and continuous optimization.
+</p>
+
+</div>
+
+
+<div class="score-grid">
+
+
+<div class="score-card reveal">
+
+
+<div class="score-row">
+
+<div class="score-icon">🎯</div>
+
+<div>
+
+<h4>Goal Focused</h4>
+
+<p>Every action has a business objective.</p>
+
+</div>
+
+<div class="score-number">01</div>
+
+</div>
+
+
+<div class="score-row">
+
+<div class="score-icon">📊</div>
+
+<div>
+
+<h4>Data Driven</h4>
+
+<p>Decisions backed by measurable insights.</p>
+
+</div>
+
+<div class="score-number">02</div>
+
+</div>
+
+
+<div class="score-row">
+
+<div class="score-icon">⚡</div>
+
+<div>
+
+<h4>Fast Execution</h4>
+
+<p>Less waiting, more implementation.</p>
+
+</div>
+
+<div class="score-number">03</div>
+
+</div>
+
+
+<div class="score-row">
+
+<div class="score-icon">💬</div>
+
+<div>
+
+<h4>Transparent</h4>
+
+<p>Clear communication throughout the process.</p>
+
+</div>
+
+<div class="score-number">04</div>
+
+</div>
+
+
+</div>
+
+
+<div class="score-card reveal">
+
+
+<div class="score-row">
+
+<div class="score-icon">💜</div>
+
+<div>
+
+<h4>Client First</h4>
+
+<p>Your business goals stay at the center.</p>
+
+</div>
+
+<div class="score-number">05</div>
+
+</div>
+
+
+<div class="score-row">
+
+<div class="score-icon">🔎</div>
+
+<div>
+
+<h4>Research Led</h4>
+
+<p>Opportunities begin with understanding.</p>
+
+</div>
+
+<div class="score-number">06</div>
+
+</div>
+
+
+<div class="score-row">
+
+<div class="score-icon">🚀</div>
+
+<div>
+
+<h4>Growth Mindset</h4>
+
+<p>Always looking for the next opportunity.</p>
+
+</div>
+
+<div class="score-number">07</div>
+
+</div>
+
+
+<div class="score-row">
+
+<div class="score-icon">🌎</div>
+
+<div>
+
+<h4>Multi-Platform</h4>
+
+<p>Amazon, Shopify, Walmart and eBay.</p>
+
+</div>
+
+<div class="score-number">08</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROCESS -->
+
+<section class="process" id="process">
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+<div class="label">
+Our Process
+</div>
+
+<h2>
+
+Simple Process.
+<span class="gradient">Serious Execution.</span>
+
+</h2>
+
+<p>
+
+A clear three-stage framework that turns opportunities
+into execution and execution into growth.
+
+</p>
+
+</div>
+
+
+<div class="process-grid">
+
+
+<div class="process-card reveal">
+
+<div class="process-number">01</div>
+
+<div class="process-icon">🔎</div>
+
+<h3>Discover</h3>
+
+<p>
+We understand your product, market, customers,
+competition and business goals before making a plan.
+</p>
+
+<div class="process-tags">
+
+<span>Market</span>
+<span>Product</span>
+<span>Competitor</span>
+<span>Customer</span>
+
+</div>
+
+</div>
+
+
+<div class="process-card reveal">
+
+<div class="process-number">02</div>
+
+<div class="process-icon">🧠</div>
+
+<h3>Strategize</h3>
+
+<p>
+We create a customized roadmap based on your
+opportunities, resources and growth objectives.
+</p>
+
+<div class="process-tags">
+
+<span>Research</span>
+<span>Planning</span>
+<span>Campaign</span>
+<span>Optimization</span>
+
+</div>
+
+</div>
+
+
+<div class="process-card reveal">
+
+<div class="process-number">03</div>
+
+<div class="process-icon">🚀</div>
+
+<h3>Scale</h3>
+
+<p>
+We execute, measure, optimize and continuously
+look for new ways to improve performance.
+</p>
+
+<div class="process-tags">
+
+<span>Launch</span>
+<span>Analyze</span>
+<span>Optimize</span>
+<span>Grow</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TESTIMONIALS -->
+
+<section class="testimonials">
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+<div class="label">
+Client Experience
+</div>
+
+<h2>
+
+Built To Create
+<span class="gradient">Momentum.</span>
+
+</h2>
+
+<p>
+Sample testimonial cards — replace these with your
+real client feedback before publishing.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="testimonial-track">
+
+
+<div class="testimonial">
+
+<div class="stars">★★★★★</div>
+
+<p>
+“Anamika brought a much more structured approach to
+our e-commerce operations. Communication was clear
+and the strategy was easy to understand.”
+</p>
+
+<div class="client">
+
+<div class="avatar">JD</div>
+
+<div>
+<strong>Jordan D.</strong>
+<small>Sample Client · Amazon</small>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="testimonial">
+
+<div class="stars">★★★★★</div>
+
+<p>
+“The biggest difference was the attention to detail.
+Our listings became much more organized and the
+advertising strategy was easier to manage.”
+</p>
+
+<div class="client">
+
+<div class="avatar">SM</div>
+
+<div>
+<strong>Sarah M.</strong>
+<small>Sample Client · Shopify</small>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="testimonial">
+
+<div class="stars">★★★★★</div>
+
+<p>
+“Professional, responsive and focused on the actual
+business goals. The workflow made marketplace
+management much easier.”
+</p>
+
+<div class="client">
+
+<div class="avatar">AK</div>
+
+<div>
+<strong>Alex K.</strong>
+<small>Sample Client · Walmart</small>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- duplicate for infinite marquee -->
+
+<div class="testimonial">
+
+<div class="stars">★★★★★</div>
+
+<p>
+“Anamika brought a much more structured approach to
+our e-commerce operations. Communication was clear
+and the strategy was easy to understand.”
+</p>
+
+<div class="client">
+
+<div class="avatar">JD</div>
+
+<div>
+<strong>Jordan D.</strong>
+<small>Sample Client · Amazon</small>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="testimonial">
+
+<div class="stars">★★★★★</div>
+
+<p>
+“The biggest difference was the attention to detail.
+Our listings became much more organized and the
+advertising strategy was easier to manage.”
+</p>
+
+<div class="client">
+
+<div class="avatar">SM</div>
+
+<div>
+<strong>Sarah M.</strong>
+<small>Sample Client · Shopify</small>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="testimonial">
+
+<div class="stars">★★★★★</div>
+
+<p>
+“Professional, responsive and focused on the actual
+business goals. The workflow made marketplace
+management much easier.”
+</p>
+
+<div class="client">
+
+<div class="avatar">AK</div>
+
+<div>
+<strong>Alex K.</strong>
+<small>Sample Client · Walmart</small>
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+<div class="container">
+
+<div class="cta-box reveal">
+
+<div class="cta-content">
+
+<h2>
+
+Your Next Growth Story
+Starts <span class="gradient">Here.</span>
+
+</h2>
+
+<p>
+
+Tell us where your business is today.
+Let's build a smarter path toward where you want to go.
+
+</p>
+
+<a
+href="https://wa.me/8801792499281?text=Hello%20Anamika%2C%20I%20want%20to%20discuss%20my%20e-commerce%20business."
+target="_blank"
+class="btn btn-main">
+
+Talk on WhatsApp →
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<div class="container">
+
+<div class="contact-grid">
+
+
+<div class="contact-copy reveal">
+
+<div class="label">
+Let's Connect
+</div>
+
+<h2>
+
+Let's Talk About Your
+<span class="gradient">Growth.</span>
+
+</h2>
+
+<p>
+
+Have a project in mind or need help growing your store?
+Send a message and let's start the conversation.
+
+</p>
+
+
+<div class="contact-info">
+
+
+<div class="contact-item">
+
+<div class="contact-icon">✉️</div>
+
+<div>
+
+<small>Email</small>
+
+<span>
+<a href="mailto:anamikaanu@gmail.com">
+anamikaanu@gmail.com
+</a>
+</span>
+
+</div>
+
+</div>
+
+
+<div class="contact-item">
+
+<div class="contact-icon">💬</div>
+
+<div>
+
+<small>WhatsApp</small>
+
+<span>
+<a
+href="https://wa.me/8801792499281"
+target="_blank">
+01792499281
+</a>
+</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<form
+class="form reveal"
+id="contactForm">
+
+
+<div class="row">
+
+<div class="field">
+
+<label>Your Name</label>
+
+<input
+id="name"
+type="text"
+placeholder="Your name"
+required>
+
+</div>
+
+
+<div class="field">
+
+<label>Email</label>
+
+<input
+id="email"
+type="email"
+placeholder="you@example.com"
+required>
+
+</div>
+
+</div>
+
+
+<div class="field">
+
+<label>Service</label>
+
+<select id="service" required>
+
+<option value="">
+Choose a service
+</option>
+
+<option>Amazon PPC</option>
+<option>Amazon Listing Optimization</option>
+<option>Product Research</option>
+<option>SEO</option>
+<option>Shopify</option>
+<option>Walmart / eBay</option>
+<option>Data Entry</option>
+<option>Customer Support</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>Project Details</label>
+
+<textarea
+id="message"
+placeholder="Tell us about your project..."
+required></textarea>
+
+</div>
+
+
+<button
+type="submit"
+class="btn btn-main submit">
+
+Send via WhatsApp →
+
+</button>
+
+</form>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+
+<div>
+
+<div class="footer-logo">
+
+<div class="logo-mark">
+<span>A</span>
+</div>
+
+Anamika.
+
+</div>
+
+<p>
+
+E-commerce growth solutions for ambitious brands
+across Amazon, Shopify, Walmart and eBay.
+
+</p>
+
+</div>
+
+
+<div>
+
+<h4>Services</h4>
+
+<ul>
+
+<li><a href="#services">Amazon PPC</a></li>
+
+<li><a href="#services">Listing Optimization</a></li>
+
+<li><a href="#services">Product Research</a></li>
+
+<li><a href="#services">SEO</a></li>
+
+</ul>
+
+</div>
+
+
+<div>
+
+<h4>Platforms</h4>
+
+<ul>
+
+<li><a href="#services">Amazon</a></li>
+
+<li><a href="#services">Shopify</a></li>
+
+<li><a href="#services">Walmart</a></li>
+
+<li><a href="#services">eBay</a></li>
+
+</ul>
+
+</div>
+
+
+<div>
+
+<h4>Contact</h4>
+
+<ul>
+
+<li>
+<a href="mailto:anamikaanu@gmail.com">
+Email
+</a>
+</li>
+
+<li>
+<a
+href="https://wa.me/8801792499281"
+target="_blank">
+WhatsApp
+</a>
+</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 Anamika. All Rights Reserved.
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- STICKY CTA -->
+
+<div class="sticky-cta" id="stickyCta">
+
+<span>
+Ready to grow your <b>e-commerce business?</b>
+</span>
+
+<a
+href="https://wa.me/8801792499281?text=Hello%20Anamika%2C%20I%20want%20to%20grow%20my%20e-commerce%20business."
+target="_blank">
+
+Talk on WhatsApp →
+
+</a>
+
+</div>
+
+
+<!-- WHATSAPP -->
+
+<div class="whatsapp-wrap">
+
+<div class="whatsapp-bubble">
+
+<strong>Need help growing?</strong>
+
+<p>
+Chat with Anamika about your e-commerce project.
+</p>
+
+</div>
+
+<a
+class="whatsapp"
+href="https://wa.me/8801792499281?text=Hello%20Anamika%2C%20I%20am%20interested%20in%20your%20e-commerce%20services."
+target="_blank">
+
+💬
+
+</a>
+
+</div>
+
+
+<script>
+
+/* =====================================
+   LOADER
+===================================== */
+
+window.addEventListener("load",()=>{
+
+setTimeout(()=>{
+
+document
+.getElementById("loader")
+.classList.add("hide");
+
+},1700);
+
+});
+
+
+/* =====================================
+   HEADER
+===================================== */
+
+const header =
+document.getElementById("header");
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY > 40){
+
+header.classList.add("scrolled");
+
+}else{
+
+header.classList.remove("scrolled");
+
+}
+
+});
+
+
+/* =====================================
+   MOBILE MENU
+===================================== */
+
+const menu =
+document.getElementById("menu");
+
+const navLinks =
+document.getElementById("navLinks");
+
+menu.addEventListener("click",()=>{
+
+navLinks.classList.toggle("active");
+
+});
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(link=>{
+
+link.addEventListener("click",()=>{
+
+navLinks.classList.remove("active");
+
+});
+
+});
+
+
+/* =====================================
+   CURSOR GLOW
+===================================== */
+
+const cursor =
+document.getElementById("cursor");
+
+document.addEventListener("mousemove",(e)=>{
+
+cursor.style.left =
+e.clientX + "px";
+
+cursor.style.top =
+e.clientY + "px";
+
+});
+
+
+/* =====================================
+   PARTICLES
+===================================== */
+
+const particleBox =
+document.getElementById("particles");
+
+for(let i=0;i<35;i++){
+
+const particle =
+document.createElement("span");
+
+particle.className="particle";
+
+particle.style.left =
+Math.random()*100+"%";
+
+particle.style.animationDuration =
+(8 + Math.random()*15)+"s";
+
+particle.style.animationDelay =
+(-Math.random()*15)+"s";
+
+particle.style.opacity =
+.2 + Math.random()*.6;
+
+particleBox.appendChild(particle);
+
+}
+
+
+/* =====================================
+   SCROLL REVEAL
+===================================== */
+
+const observer =
+new IntersectionObserver(
+(entries)=>{
+  
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+},
+{
+threshold:.12
+}
+);
+
+document
+.querySelectorAll(".reveal")
+.forEach((el,index)=>{
+
+el.style.transitionDelay =
+(index % 4) * 80 + "ms";
+
+observer.observe(el);
+
+});
+
+
+/* =====================================
+   MAIN COUNTERS
+===================================== */
+
+const counters =
+document.querySelectorAll("[data-count]");
+
+const counterObserver =
+new IntersectionObserver(
+(entries,obs)=>{
+
+entries.forEach(entry=>{
+
+if(!entry.isIntersecting)
+return;
+
+const el =
+entry.target;
+
+const target =
+parseFloat(el.dataset.count);
+
+const duration =
+1800;
+
+const startTime =
+performance.now();
+
+function update(now){
+
+const progress =
+Math.min(
+(now-startTime)/duration,
+1
+);
+
+const ease =
+1-Math.pow(1-progress,4);
+
+const value =
+target*ease;
+
+if(target%1 !== 0){
+
+el.textContent =
+value.toFixed(1);
+
+}else{
+
+el.textContent =
+Math.floor(value);
+
+}
+
+if(progress<1){
+
+requestAnimationFrame(update);
+
+}
+
+}
+
+requestAnimationFrame(update);
+
+obs.unobserve(el);
+
+});
+
+},
+{
+threshold:.5
+}
+);
+
+counters.forEach(el=>{
+counterObserver.observe(el);
+});
+
+
+/* =====================================
+   DASHBOARD COUNTERS
+===================================== */
+
+function animateNumber(el,target){
+
+let current=0;
+
+const step =
+target/45;
+
+const timer =
+setInterval(()=>{
+
+current += step;
+
+if(current>=target){
+
+current=target;
+clearInterval(timer);
+
+}
+
+el.textContent =
+Math.floor(current);
+
+},35);
+
+}
+
+document
+.querySelectorAll(".dash-count")
+.forEach(el=>{
+
+animateNumber(
+el,
+parseInt(el.dataset.target)
+);
+
+});
+
+
+/* =====================================
+   DASHBOARD ROAS
+===================================== */
+
+const roasElements =
+document.querySelectorAll(
+"#roas,.dash-roas"
+);
+
+let roasValue=0;
+
+const roasTimer =
+setInterval(()=>{
+
+roasValue += .11;
+
+if(roasValue>=5.5){
+
+roasValue=5.5;
+clearInterval(roasTimer);
+
+}
+
+roasElements.forEach(el=>{
+
+el.textContent =
+roasValue.toFixed(2);
+
+});
+
+},45);
+
+
+/* =====================================
+   DASHBOARD 3D
+===================================== */
+
+const dashboard =
+document.getElementById("dashboard");
+
+if(window.innerWidth>800){
+
+dashboard.addEventListener(
+"mousemove",
+(e)=>{
+
+const rect =
+dashboard.getBoundingClientRect();
+
+const x =
+e.clientX-rect.left;
+
+const y =
+e.clientY-rect.top;
+
+const rotateY =
+(x/rect.width-.5)*9;
+
+const rotateX =
+-(y/rect.height-.5)*9;
+
+dashboard.style.transform =
+`rotateY(${rotateY}deg)
+ rotateX(${rotateX}deg)
+ translateY(-5px)`;
+
+}
+);
+
+dashboard.addEventListener(
+"mouseleave",
+()=>{
+
+dashboard.style.transform =
+"rotateY(-5deg) rotateX(3deg)";
+
+}
+);
+
+}
+
+
+/* =====================================
+   STICKY CTA
+===================================== */
+
+const sticky =
+document.getElementById("stickyCta");
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>700){
+
+sticky.classList.add("show");
+
+}else{
+
+sticky.classList.remove("show");
+
+}
+
+});
+
+
+/* =====================================
+   MAGNETIC BUTTONS
+===================================== */
+
+document
+.querySelectorAll(".btn")
+.forEach(btn=>{
+
+btn.addEventListener(
+"mousemove",
+(e)=>{
+
+if(window.innerWidth<700)
+return;
+
+const rect =
+btn.getBoundingClientRect();
+
+const x =
+e.clientX-
+rect.left-
+rect.width/2;
+
+const y =
+e.clientY-
+rect.top-
+rect.height/2;
+
+btn.style.transform =
+`translate(${x*.08}px,${y*.08}px)`;
+
+}
+);
+
+btn.addEventListener(
+"mouseleave",
+()=>{
+
+btn.style.transform="";
+
+}
+);
+
+});
+
+
+/* =====================================
+   CONTACT → WHATSAPP
+===================================== */
+
+const form =
+document.getElementById("contactForm");
+
+form.addEventListener(
+"submit",
+function(e){
+
+e.preventDefault();
+
+const name =
+document.getElementById("name").value;
+
+const email =
+document.getElementById("email").value;
+
+const service =
+document.getElementById("service").value;
+
+const message =
+document.getElementById("message").value;
+
+
+const text =
+`Hello Anamika,
 
 Name: ${name}
 Email: ${email}
-Business/Website: ${business}
+Service: ${service}
 
-Project:
+Project Details:
 ${message}`;
 
 
-        const url =
-          "https://wa.me/8801772572380?text="
-          + encodeURIComponent(whatsappMessage);
+const whatsappURL =
+"https://wa.me/8801792499281?text="+
+encodeURIComponent(text);
+
+window.open(
+whatsappURL,
+"_blank"
+);
+
+}
+);
 
 
-        window.open(url,"_blank");
+/* =====================================
+   PARALLAX HERO
+===================================== */
 
-      });
+window.addEventListener("scroll",()=>{
 
-  </script>
+const scroll =
+window.scrollY;
+
+const hero =
+document.querySelector(".hero");
+
+if(hero){
+
+const visual =
+hero.querySelector(".visual");
+
+if(visual){
+
+visual.style.transform =
+`translateY(${scroll*.035}px)`;
+
+}
+
+}
+
+});
+
+</script>
 
 </body>
 </html>
